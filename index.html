@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Travellingo | Plan Less. Experience More.</title>
+    <meta name="description" content="AI-powered travel planning for smarter trips, better routes, local insights, and stress-free travel.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link href="/src/styles.css" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script>
+      // Check local storage for theme preference before rendering
+      if (localStorage.theme === 'light' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: light)').matches)) {
+        document.documentElement.classList.remove('dark')
+      } else {
+        document.documentElement.classList.add('dark')
+      }
+    </script>
+  </head>
+  <body class="bg-background text-text font-sans selection:bg-primary/30 antialiased overflow-x-hidden transition-colors duration-300">
+
+    <!-- 1. HEADER / NAVBAR -->
+    <header id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300 bg-transparent">
+      <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+        <a href="#" class="text-2xl font-display font-bold tracking-tight z-50">
+          <span class="text-text">Travellingo</span><span class="text-primary">.</span>
+        </a>
+
+        <!-- Desktop Menu -->
+        <nav class="hidden md:flex space-x-8 items-center">
+          <a href="#features" class="text-sm font-medium text-muted hover:text-text transition-colors">Features</a>
+          <a href="#how-it-works" class="text-sm font-medium text-muted hover:text-text transition-colors">How it works</a>
+          <a href="#destinations" class="text-sm font-medium text-muted hover:text-text transition-colors">Destinations</a>
+          <a href="#pricing" class="text-sm font-medium text-muted hover:text-text transition-colors">Pricing</a>
+          <a href="#about" class="text-sm font-medium text-muted hover:text-text transition-colors">About Us</a>
+        </nav>
+
+        <div class="hidden md:flex items-center gap-4">
+          <button id="theme-toggle" class="p-2 rounded-full text-muted hover:bg-surface hover:text-text transition-colors">
+            <i class="ph ph-sun text-xl hidden dark:block"></i>
+            <i class="ph ph-moon text-xl block dark:hidden"></i>
+          </button>
+          <a href="#early-access" class="px-5 py-2.5 rounded-full bg-text text-background font-medium text-sm hover:opacity-80 transition-opacity transform hover:scale-105 inline-block">
+            Join Early Access
+          </a>
+        </div>
+
+        <div class="md:hidden flex items-center gap-4">
+          <button id="theme-toggle-mobile" class="p-2 rounded-full text-muted hover:text-text transition-colors z-50">
+            <i class="ph ph-sun text-xl hidden dark:block"></i>
+            <i class="ph ph-moon text-xl block dark:hidden"></i>
+          </button>
+          <!-- Mobile Menu Toggle -->
+          <button id="mobile-menu-btn" class="text-muted hover:text-text z-50 focus:outline-none">
+            <i class="ph ph-list text-3xl"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu Overlay -->
+      <div id="mobile-menu" class="fixed inset-0 bg-background/95 backdrop-blur-xl flex flex-col items-center justify-center space-y-8 opacity-0 pointer-events-none transition-opacity duration-300 z-40">
+        <a href="#features" class="mobile-link text-2xl font-display font-medium text-text">Features</a>
+        <a href="#how-it-works" class="mobile-link text-2xl font-display font-medium text-text">How it works</a>
+        <a href="#destinations" class="mobile-link text-2xl font-display font-medium text-text">Destinations</a>
+        <a href="#pricing" class="mobile-link text-2xl font-display font-medium text-text">Pricing</a>
+        <a href="#early-access" class="mobile-link px-8 py-3 rounded-full bg-primary text-white font-medium mt-4">Join Early Access</a>
+      </div>
+    </header>
+
+    <!-- 2. HERO SECTION -->
+    <section class="relative min-h-screen flex items-center pt-20 overflow-hidden" id="hero">
+      <div class="absolute inset-0 z-0">
+         <img src="/src/assets/hero_background.png" alt="Scenic Background" class="w-full h-full object-cover opacity-20 dark:opacity-40 transition-opacity duration-300">
+         <div class="absolute inset-0 bg-hero-gradient"></div>
+      </div>
+
+      <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center relative z-10">
+        <div class="max-w-2xl fade-up">
+          <h1 class="text-5xl md:text-7xl font-bold leading-tight mb-6 text-text">
+            Plan Less.<br>
+            <span class="text-gradient">Experience More.</span>
+          </h1>
+          <p class="text-lg md:text-xl text-muted mb-8 leading-relaxed max-w-xl">
+            AI-powered travel planning for smarter trips, better routes, local insights, and stress-free travel. From trip planning to real-time travel assistance — everything in one place.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 mb-12">
+            <a href="#start" class="px-8 py-4 rounded-full bg-primary hover:bg-primary/90 text-white font-medium text-center transition-colors">Start Planning</a>
+            <a href="#demo" class="px-8 py-4 rounded-full glass hover:bg-surface text-text font-medium text-center transition-colors flex items-center justify-center gap-2">
+              <i class="ph ph-play-circle text-xl"></i> Watch Demo
+            </a>
+          </div>
+
+          <div class="flex flex-wrap gap-3">
+            <span class="px-4 py-1.5 rounded-full bg-surface border border-border text-sm text-muted flex items-center gap-2"><i class="ph ph-buildings"></i> City Trips</span>
+            <span class="px-4 py-1.5 rounded-full bg-surface border border-border text-sm text-muted flex items-center gap-2"><i class="ph ph-heart"></i> Couple Travel</span>
+            <span class="px-4 py-1.5 rounded-full bg-surface border border-border text-sm text-muted flex items-center gap-2"><i class="ph ph-users"></i> Group Adventures</span>
+            <span class="px-4 py-1.5 rounded-full bg-surface border border-border text-sm text-muted flex items-center gap-2"><i class="ph ph-car"></i> Road Trips</span>
+          </div>
+        </div>
+
+        <div class="relative hidden lg:block fade-up delay-200 perspective-1000">
+          <div class="relative w-[300px] mx-auto transform rotate-y-[-15deg] rotate-x-[5deg] hover:rotate-y-0 hover:rotate-x-0 transition-transform duration-700 ease-out">
+            <!-- Mobile Mockup -->
+            <div class="absolute inset-0 bg-primary/20 blur-3xl rounded-full"></div>
+            <img src="/src/assets/mobile_mockup.png" alt="Travellingo App UI" class="relative z-10 w-full rounded-[2.5rem] shadow-2xl border-4 border-surface">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. PROBLEM SECTION -->
+    <section id="problem" class="py-24 bg-surface relative z-10">
+      <div class="max-w-7xl mx-auto px-6 text-center">
+        <h2 class="text-4xl md:text-5xl font-bold mb-16 fade-up text-text">Travel planning is <span class="text-secondary">chaos.</span></h2>
+        
+        <div class="grid grid-cols-2 md:grid-cols-5 gap-8 mb-16">
+          <div class="flex flex-col items-center gap-4 fade-up delay-100 hover-lift">
+            <div class="w-16 h-16 rounded-2xl bg-background border border-border flex items-center justify-center text-3xl text-muted shadow-sm">
+              <i class="ph ph-airplane-tilt"></i>
+            </div>
+            <p class="text-sm text-muted">Booking here</p>
+          </div>
+          <div class="flex flex-col items-center gap-4 fade-up delay-200 hover-lift">
+            <div class="w-16 h-16 rounded-2xl bg-background border border-border flex items-center justify-center text-3xl text-muted shadow-sm">
+              <i class="ph ph-map-trifold"></i>
+            </div>
+            <p class="text-sm text-muted">Maps there</p>
+          </div>
+          <div class="flex flex-col items-center gap-4 fade-up delay-300 hover-lift">
+            <div class="w-16 h-16 rounded-2xl bg-background border border-border flex items-center justify-center text-3xl text-muted shadow-sm">
+              <i class="ph ph-notepad"></i>
+            </div>
+            <p class="text-sm text-muted">Notes everywhere</p>
+          </div>
+          <div class="flex flex-col items-center gap-4 fade-up delay-400 hover-lift">
+            <div class="w-16 h-16 rounded-2xl bg-background border border-border flex items-center justify-center text-3xl text-muted shadow-sm">
+              <i class="ph ph-whatsapp-logo"></i>
+            </div>
+            <p class="text-sm text-muted">WhatsApp groups</p>
+          </div>
+          <div class="flex flex-col items-center gap-4 fade-up delay-500 hover-lift">
+            <div class="w-16 h-16 rounded-2xl bg-background border border-border flex items-center justify-center text-3xl text-muted shadow-sm">
+              <i class="ph ph-article"></i>
+            </div>
+            <p class="text-sm text-muted">Random blogs</p>
+          </div>
+        </div>
+
+        <p class="text-2xl font-medium text-muted fade-up">Too many apps. <span class="text-text">Too much stress.</span></p>
+      </div>
+    </section>
+
+    <!-- 4. SOLUTION SECTION -->
+    <section id="solution" class="py-32 bg-background relative z-10">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-20 fade-up">
+          <h2 class="text-4xl md:text-5xl font-bold mb-6 text-text">One <span class="text-primary">smart</span> travel system.</h2>
+          <p class="text-muted text-lg max-w-2xl mx-auto">Everything you need seamlessly integrated into one powerful platform.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="glass p-8 rounded-3xl hover-lift fade-up">
+            <div class="w-12 h-12 rounded-xl bg-primary/20 text-primary flex items-center justify-center text-2xl mb-6">
+              <i class="ph ph-magic-wand"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3 text-text">Smart Trip Planning</h3>
+            <p class="text-muted text-sm leading-relaxed">AI creates the perfect itinerary based on your preferences and pace.</p>
+          </div>
+
+          <div class="glass p-8 rounded-3xl hover-lift fade-up delay-100">
+            <div class="w-12 h-12 rounded-xl bg-secondary/20 text-secondary flex items-center justify-center text-2xl mb-6">
+              <i class="ph ph-map-pin"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3 text-text">Interactive Maps + POIs</h3>
+            <p class="text-muted text-sm leading-relaxed">Discover hidden gems and navigate effortlessly with integrated smart maps.</p>
+          </div>
+
+          <div class="glass p-8 rounded-3xl hover-lift fade-up delay-200">
+            <div class="w-12 h-12 rounded-xl bg-blue-500/20 text-blue-500 flex items-center justify-center text-2xl mb-6">
+              <i class="ph ph-bed"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3 text-text">Hotel + Parking Guidance</h3>
+            <p class="text-muted text-sm leading-relaxed">Get seamless recommendations for stays and nearby transport logistics.</p>
+          </div>
+
+          <div class="glass p-8 rounded-3xl hover-lift fade-up delay-300">
+            <div class="w-12 h-12 rounded-xl bg-emerald-500/20 text-emerald-500 flex items-center justify-center text-2xl mb-6">
+              <i class="ph ph-compass"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3 text-text">Local Insider AI</h3>
+            <p class="text-muted text-sm leading-relaxed">Personalized recommendations from our AI trained on local knowledge.</p>
+          </div>
+
+          <div class="glass p-8 rounded-3xl hover-lift fade-up delay-400">
+            <div class="w-12 h-12 rounded-xl bg-pink-500/20 text-pink-500 flex items-center justify-center text-2xl mb-6">
+              <i class="ph ph-users-three"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3 text-text">Group Coordination</h3>
+            <p class="text-muted text-sm leading-relaxed">Plan together, split expenses, and share live locations effortlessly.</p>
+          </div>
+
+          <div class="glass p-8 rounded-3xl hover-lift fade-up delay-500">
+            <div class="w-12 h-12 rounded-xl bg-amber-500/20 text-amber-500 flex items-center justify-center text-2xl mb-6">
+              <i class="ph ph-headset"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3 text-text">Live Travel Assistant</h3>
+            <p class="text-muted text-sm leading-relaxed">24/7 on-trip support for modifications, translation, and urgent queries.</p>
+          </div>
+
+          <div class="glass p-8 rounded-3xl hover-lift fade-up delay-600">
+            <div class="w-12 h-12 rounded-xl bg-teal-500/20 text-teal-500 flex items-center justify-center text-2xl mb-6">
+              <i class="ph ph-wallet"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3 text-text">Budget Tracking</h3>
+            <p class="text-muted text-sm leading-relaxed">Monitor group and personal expenses in multiple currencies real-time.</p>
+          </div>
+
+          <div class="glass p-8 rounded-3xl hover-lift fade-up delay-700">
+            <div class="w-12 h-12 rounded-xl bg-rose-500/20 text-rose-500 flex items-center justify-center text-2xl mb-6">
+              <i class="ph ph-images"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3 text-text">Memory Engine</h3>
+            <p class="text-muted text-sm leading-relaxed">Automatically organize your photos and routes into a beautiful trip journal.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. WOW FEATURES -->
+    <section class="py-32 bg-surface relative z-10 overflow-hidden" id="features">
+      <div class="max-w-7xl mx-auto px-6 space-y-32">
+        
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+          <div class="fade-up">
+            <div class="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary font-medium mb-6 text-sm border border-primary/20">Smart Trip Planner</div>
+            <h2 class="text-4xl md:text-5xl font-bold mb-6 text-text">Itineraries built for you. In seconds.</h2>
+            <p class="text-lg text-muted mb-8 leading-relaxed">Tell us where you want to go and what you love. Our AI analyzes millions of data points to create the perfect, balanced itinerary that respects travel times and opening hours.</p>
+            <ul class="space-y-4">
+              <li class="flex items-center gap-3 text-text"><i class="ph-fill ph-check-circle text-primary text-xl"></i> Dynamic time allocation</li>
+              <li class="flex items-center gap-3 text-text"><i class="ph-fill ph-check-circle text-primary text-xl"></i> Instant route optimization</li>
+              <li class="flex items-center gap-3 text-text"><i class="ph-fill ph-check-circle text-primary text-xl"></i> Weather-aware suggestions</li>
+            </ul>
+          </div>
+          <div class="relative fade-up delay-200">
+            <div class="absolute inset-0 bg-gradient-to-r from-primary/30 to-secondary/30 blur-3xl rounded-full"></div>
+            <div class="relative glass rounded-3xl p-8 border border-border shadow-2xl">
+              <div class="space-y-4">
+                <div class="h-4 w-1/3 bg-background rounded animate-pulse"></div>
+                <div class="flex gap-4 items-center p-4 rounded-xl bg-background/50 border border-border">
+                  <div class="w-12 h-12 rounded-lg bg-primary/20"></div>
+                  <div class="flex-1 space-y-2"><div class="h-3 w-3/4 bg-muted/20 rounded"></div><div class="h-2 w-1/2 bg-muted/10 rounded"></div></div>
+                </div>
+                <div class="flex gap-4 items-center p-4 rounded-xl bg-background/50 border border-border">
+                  <div class="w-12 h-12 rounded-lg bg-secondary/20"></div>
+                  <div class="flex-1 space-y-2"><div class="h-3 w-2/3 bg-muted/20 rounded"></div><div class="h-2 w-1/3 bg-muted/10 rounded"></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 6. REAL EXAMPLE (MAP SECTION) -->
+    <section class="py-32 bg-background relative z-10" id="destinations">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-20 fade-up">
+          <h2 class="text-4xl md:text-5xl font-bold mb-6 text-text">Experience <span class="text-gradient">Venice in 3 Days</span></h2>
+          <p class="text-muted text-lg max-w-2xl mx-auto">See how Travellingo transforms a complex city trip into a seamless experience.</p>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+          <div class="order-2 lg:order-1 space-y-6 fade-up">
+            
+            <div class="glass p-6 rounded-2xl flex items-start gap-4 hover-lift">
+              <div class="w-10 h-10 rounded-full bg-blue-500/20 text-blue-500 flex items-center justify-center shrink-0"><i class="ph ph-car"></i></div>
+              <div>
+                <h4 class="font-bold text-lg mb-1 text-text">Parking Suggestion</h4>
+                <p class="text-sm text-muted">Park at Tronchetto. It's €28/day and right next to the Vaporetto stop.</p>
+              </div>
+            </div>
+
+            <div class="glass p-6 rounded-2xl flex items-start gap-4 hover-lift">
+              <div class="w-10 h-10 rounded-full bg-cyan-500/20 text-cyan-500 flex items-center justify-center shrink-0"><i class="ph ph-boat"></i></div>
+              <div>
+                <h4 class="font-bold text-lg mb-1 text-text">Water Taxi Booking</h4>
+                <p class="text-sm text-muted">Pre-booked Line 2 ticket. Departs in 15 mins from your location.</p>
+              </div>
+            </div>
+
+            <div class="glass p-6 rounded-2xl flex items-start gap-4 hover-lift border-l-2 border-l-primary">
+              <div class="w-10 h-10 rounded-full bg-primary/20 text-primary flex items-center justify-center shrink-0"><i class="ph ph-coffee"></i></div>
+              <div>
+                <h4 class="font-bold text-lg mb-1 text-text">Breakfast Spot</h4>
+                <p class="text-sm text-muted">Caffè Florian. Your table is ready. <span class="text-primary text-xs ml-2">Current Activity</span></p>
+              </div>
+            </div>
+
+            <div class="glass p-6 rounded-2xl flex items-start gap-4 hover-lift">
+              <div class="w-10 h-10 rounded-full bg-amber-500/20 text-amber-500 flex items-center justify-center shrink-0"><i class="ph ph-footprints"></i></div>
+              <div>
+                <h4 class="font-bold text-lg mb-1 text-text">Walking Route</h4>
+                <p class="text-sm text-muted">Scenic 1.2km walk to Rialto Bridge avoiding major tourist crowds.</p>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="order-1 lg:order-2 relative fade-up delay-200">
+            <div class="absolute inset-0 bg-primary/20 blur-3xl rounded-full"></div>
+            <img src="/src/assets/map_mockup.png" alt="Map UI" class="relative z-10 w-full rounded-3xl shadow-2xl border border-border">
+            
+            <div class="absolute -bottom-8 -left-8 z-20 glass p-5 rounded-2xl shadow-xl w-64 animate-bounce hover:animate-none" style="animation-duration: 3s;">
+              <div class="flex items-center gap-3 mb-3">
+                <div class="w-10 h-10 rounded bg-indigo-500/20 flex items-center justify-center"><i class="ph ph-moon text-indigo-500"></i></div>
+                <div>
+                  <h5 class="font-bold text-sm text-text">Evening in Venice</h5>
+                  <p class="text-xs text-muted">2hr Guided Tour</p>
+                </div>
+              </div>
+              <button class="w-full py-2 bg-text text-background text-sm font-bold rounded-lg hover:opacity-80 transition-colors">Add to Plan</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. GROUP TRAVEL SECTION -->
+    <section class="py-32 bg-surface relative z-10">
+      <div class="max-w-7xl mx-auto px-6 text-center">
+        <h2 class="text-4xl md:text-5xl font-bold mb-16 fade-up text-text">Stop planning in <span class="text-emerald-500">WhatsApp.</span></h2>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div class="glass p-8 rounded-3xl hover-lift fade-up delay-100 flex flex-col items-center text-center">
+            <i class="ph ph-user-plus text-4xl text-primary mb-4"></i>
+            <h4 class="font-bold text-lg mb-2 text-text">Invite Friends</h4>
+            <p class="text-sm text-muted">Send a link and let everyone vote on dates and places.</p>
+          </div>
+          <div class="glass p-8 rounded-3xl hover-lift fade-up delay-200 flex flex-col items-center text-center">
+            <i class="ph ph-navigation-arrow text-4xl text-blue-500 mb-4"></i>
+            <h4 class="font-bold text-lg mb-2 text-text">Live Location</h4>
+            <p class="text-sm text-muted">See where everyone is on the map during free time.</p>
+          </div>
+          <div class="glass p-8 rounded-3xl hover-lift fade-up delay-300 flex flex-col items-center text-center">
+            <i class="ph ph-receipt text-4xl text-emerald-500 mb-4"></i>
+            <h4 class="font-bold text-lg mb-2 text-text">Split Expenses</h4>
+            <p class="text-sm text-muted">Automatic math. Know exactly who owes what.</p>
+          </div>
+          <div class="glass p-8 rounded-3xl hover-lift fade-up delay-400 flex flex-col items-center text-center">
+            <i class="ph ph-calendar-check text-4xl text-purple-500 mb-4"></i>
+            <h4 class="font-bold text-lg mb-2 text-text">Coordination</h4>
+            <p class="text-sm text-muted">Sync meeting points and reservations instantly.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. WHY TRAVELLINGO -->
+    <section class="py-40 bg-background relative z-10 flex flex-col items-center justify-center text-center space-y-12">
+      <h2 class="text-5xl md:text-7xl font-bold text-muted opacity-50 fade-up">Not more planning. <span class="text-text opacity-100">Better planning.</span></h2>
+      <h2 class="text-5xl md:text-7xl font-bold text-muted opacity-50 fade-up delay-100">Not more apps. <span class="text-text opacity-100">One system.</span></h2>
+      <h2 class="text-5xl md:text-7xl font-bold text-muted opacity-50 fade-up delay-200">Not more stress. <span class="text-gradient opacity-100">More memories.</span></h2>
+    </section>
+
+    <!-- 9. TESTIMONIALS -->
+    <section class="py-32 bg-surface relative z-10 overflow-hidden">
+      <div class="max-w-7xl mx-auto px-6">
+        <h2 class="text-4xl font-bold text-center mb-16 fade-up text-text">Loved by modern travelers.</h2>
+        
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="glass p-8 rounded-3xl hover-lift fade-up">
+            <div class="flex items-center gap-1 text-amber-400 mb-4 text-sm"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i></div>
+            <p class="text-text italic mb-6">"It replaced 4 different apps I used to use. Group trips are actually fun to plan now instead of a nightmare."</p>
+            <div class="flex items-center gap-4">
+              <img src="https://i.pravatar.cc/150?img=32" alt="User" class="w-12 h-12 rounded-full">
+              <div>
+                <h5 class="font-bold text-sm text-text">Sarah Jenkins</h5>
+                <p class="text-xs text-muted">London, UK</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="glass p-8 rounded-3xl hover-lift fade-up delay-100">
+            <div class="flex items-center gap-1 text-amber-400 mb-4 text-sm"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i></div>
+            <p class="text-text italic mb-6">"The Live Travel Assistant saved us in Kyoto when our train was cancelled. It rerouted us in seconds."</p>
+            <div class="flex items-center gap-4">
+              <img src="https://i.pravatar.cc/150?img=11" alt="User" class="w-12 h-12 rounded-full">
+              <div>
+                <h5 class="font-bold text-sm text-text">Marcus Chen</h5>
+                <p class="text-xs text-muted">San Francisco, USA</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="glass p-8 rounded-3xl hover-lift fade-up delay-200">
+            <div class="flex items-center gap-1 text-amber-400 mb-4 text-sm"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i></div>
+            <p class="text-text italic mb-6">"The UI is gorgeous and the AI actually understands how to pace a trip. Best travel tool on the market."</p>
+            <div class="flex items-center gap-4">
+              <img src="https://i.pravatar.cc/150?img=47" alt="User" class="w-12 h-12 rounded-full">
+              <div>
+                <h5 class="font-bold text-sm text-text">Elena Rodriguez</h5>
+                <p class="text-xs text-muted">Madrid, Spain</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. EARLY ACCESS CTA -->
+    <section class="relative py-32 overflow-hidden" id="early-access">
+      <div class="absolute inset-0 z-0">
+        <div class="absolute inset-0 bg-gradient-to-b from-surface to-background"></div>
+        <div class="absolute inset-0 bg-primary/10 blur-[100px]"></div>
+      </div>
+      
+      <div class="relative z-10 max-w-3xl mx-auto px-6 text-center glass p-12 md:p-16 rounded-[3rem] border border-border shadow-2xl fade-up">
+        <h2 class="text-4xl md:text-6xl font-bold mb-6 text-text">Ready to travel <span class="text-gradient">smarter?</span></h2>
+        <p class="text-lg text-muted mb-10 max-w-xl mx-auto">Join the waitlist today and be among the first to experience the future of travel planning.</p>
+        
+        <form class="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto">
+          <input type="email" placeholder="Enter your email" required class="flex-1 bg-background border border-border rounded-full px-6 py-4 text-text placeholder-muted focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all">
+          <button type="submit" class="bg-primary hover:bg-primary/90 text-white font-medium rounded-full px-8 py-4 transition-colors whitespace-nowrap shadow-lg shadow-primary/20 hover:shadow-primary/40 hover:-translate-y-1 transform duration-300">Join Early Access</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- 11. FOOTER -->
+    <footer class="border-t border-border bg-background pt-20 pb-10">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid md:grid-cols-4 gap-12 mb-16">
+          <div class="col-span-1 md:col-span-2">
+            <a href="#" class="text-2xl font-display font-bold tracking-tight mb-4 inline-block">
+              <span class="text-text">Travellingo</span><span class="text-primary">.</span>
+            </a>
+            <p class="text-muted text-sm max-w-xs mb-6">Plan Less. Experience More.<br>Your all-in-one AI travel companion.</p>
+            <div class="flex gap-4">
+              <a href="#" class="w-10 h-10 rounded-full bg-surface border border-border flex items-center justify-center text-muted hover:text-text transition-colors"><i class="ph-fill ph-instagram-logo"></i></a>
+              <a href="#" class="w-10 h-10 rounded-full bg-surface border border-border flex items-center justify-center text-muted hover:text-text transition-colors"><i class="ph-fill ph-tiktok-logo"></i></a>
+              <a href="#" class="w-10 h-10 rounded-full bg-surface border border-border flex items-center justify-center text-muted hover:text-text transition-colors"><i class="ph-fill ph-twitter-logo"></i></a>
+            </div>
+          </div>
+          
+          <div>
+            <h4 class="font-bold mb-4 text-text">Company</h4>
+            <ul class="space-y-3 text-sm text-muted">
+              <li><a href="#" class="hover:text-text transition-colors">About Us</a></li>
+              <li><a href="#" class="hover:text-text transition-colors">Contact</a></li>
+              <li><a href="#" class="hover:text-text transition-colors">Careers</a></li>
+              <li><a href="#" class="hover:text-text transition-colors">Blog</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="font-bold mb-4 text-text">Partners</h4>
+            <ul class="space-y-3 text-sm text-muted">
+              <li><a href="#" class="hover:text-text transition-colors">Partnerships</a></li>
+              <li><a href="#" class="hover:text-text transition-colors">Hotels</a></li>
+              <li><a href="#" class="hover:text-text transition-colors">Affiliate Partners</a></li>
+              <li><a href="#" class="hover:text-text transition-colors">Press</a></li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="border-t border-border pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-muted">
+          <p>&copy; 2026 Travellingo. All rights reserved.</p>
+          <div class="flex gap-6">
+            <a href="#" class="hover:text-text">Privacy Policy</a>
+            <a href="#" class="hover:text-text">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
