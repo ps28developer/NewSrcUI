@@ -47,6 +47,23 @@
   }
 }
 
+@layer components {
+  /* Navbar color scheme: white on hero, dark on scroll */
+  #navbar.navbar-top .nav-link {
+    @apply text-white/75 hover:text-white;
+  }
+  #navbar.navbar-top .navbar-brand {
+    @apply text-white;
+  }
+
+  #navbar.navbar-scrolled .nav-link {
+    @apply text-muted hover:text-text;
+  }
+  #navbar.navbar-scrolled .navbar-brand {
+    @apply text-text;
+  }
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
