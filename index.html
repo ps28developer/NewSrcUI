@@ -1,430 +1,437 @@
 <!doctype html>
 <html lang="en" class="scroll-smooth">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Travellingo — Plan Less. Explore More.</title>
-    <meta
-      name="description"
-      content="AI powered travel planning for smarter trips, better routes, local insights, and stress-free travel."
-    />
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Travellingo — Plan Less. Explore More.</title>
+  <meta name="description"
+    content="AI powered travel planning for smarter trips, better routes, local insights, and stress-free travel." />
 
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontFamily: {
-              sans: ["Inter", "ui-sans-serif", "system-ui"],
-              display: ["Outfit", "Inter", "ui-sans-serif", "system-ui"],
-            },
-            colors: {
-              navy: {
-                950: "#070A12",
-                900: "#0B1020",
-                850: "#0E1430",
-                800: "#121A39",
-              },
-            },
-            boxShadow: {
-              soft: "0 14px 50px rgba(2, 6, 23, 0.35)",
-              glow: "0 0 0 1px rgba(99,102,241,0.15), 0 16px 60px rgba(99,102,241,0.25)",
-            },
-            keyframes: {
-              floaty: {
-                "0%, 100%": { transform: "translateY(0px)" },
-                "50%": { transform: "translateY(-10px)" },
-              },
-              blob: {
-                "0%": { transform: "translate(0px, 0px) scale(1)" },
-                "33%": { transform: "translate(24px, -18px) scale(1.08)" },
-                "66%": { transform: "translate(-18px, 22px) scale(0.96)" },
-                "100%": { transform: "translate(0px, 0px) scale(1)" },
-              },
-            },
-            animation: {
-              floaty: "floaty 5s ease-in-out infinite",
-              blob: "blob 16s ease-in-out infinite",
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap"
+    rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ["Inter", "ui-sans-serif", "system-ui"],
+            display: ["Outfit", "Inter", "ui-sans-serif", "system-ui"],
+          },
+          colors: {
+            navy: {
+              950: "#070A12",
+              900: "#0B1020",
+              850: "#0E1430",
+              800: "#121A39",
             },
           },
+          boxShadow: {
+            soft: "0 14px 50px rgba(2, 6, 23, 0.35)",
+            glow: "0 0 0 1px rgba(99,102,241,0.15), 0 16px 60px rgba(99,102,241,0.25)",
+          },
+          keyframes: {
+            floaty: {
+              "0%, 100%": { transform: "translateY(0px)" },
+              "50%": { transform: "translateY(-10px)" },
+            },
+            blob: {
+              "0%": { transform: "translate(0px, 0px) scale(1)" },
+              "33%": { transform: "translate(24px, -18px) scale(1.08)" },
+              "66%": { transform: "translate(-18px, 22px) scale(0.96)" },
+              "100%": { transform: "translate(0px, 0px) scale(1)" },
+            },
+          },
+          animation: {
+            floaty: "floaty 5s ease-in-out infinite",
+            blob: "blob 16s ease-in-out infinite",
+          },
         },
-      };
-    </script>
+      },
+    };
+  </script>
 
-    <!-- Lucide icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Lucide icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
 
-    <!-- Font Awesome (brand icons for footer socials) -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+  <!-- Font Awesome (brand icons for footer socials) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <style>
-      html,
-      body {
-        overflow-x: hidden;
-      }
+  <style>
+    html,
+    body {
+      overflow-x: hidden;
+    }
 
-      /* Custom modern scrollbar */
-      ::-webkit-scrollbar {
-        width: 10px;
-      }
-      ::-webkit-scrollbar-track {
-        background: #070a12;
-      }
-      ::-webkit-scrollbar-thumb {
-        background: rgba(148, 163, 184, 0.22);
-        border-radius: 999px;
-        border: 2px solid #070a12;
-      }
-      ::-webkit-scrollbar-thumb:hover {
-        background: rgba(148, 163, 184, 0.35);
-      }
+    /* Custom modern scrollbar */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
 
-      /* Scroll reveal */
-      [data-reveal] {
-        opacity: 0;
-        transform: translateY(18px);
-        transition: opacity 800ms ease, transform 800ms ease;
-      }
-      [data-reveal].is-visible {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    ::-webkit-scrollbar-track {
+      background: #070a12;
+    }
 
-      /* Underline hover animation for nav links */
-      .nav-underline {
-        position: relative;
-      }
-      .nav-underline::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        bottom: -10px;
-        width: 100%;
-        height: 2px;
-        transform: scaleX(0);
-        transform-origin: left;
-        transition: transform 240ms ease;
-        background: linear-gradient(90deg, rgba(99, 102, 241, 1), rgba(168, 85, 247, 1));
-      }
-      .nav-underline:hover::after {
-        transform: scaleX(1);
-      }
-    </style>
-  </head>
+    ::-webkit-scrollbar-thumb {
+      background: rgba(148, 163, 184, 0.22);
+      border-radius: 999px;
+      border: 2px solid #070a12;
+    }
 
-  <body class="bg-navy-950 text-white antialiased selection:bg-indigo-500/30">
-    <!-- ========================================
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgba(148, 163, 184, 0.35);
+    }
+
+    /* Scroll reveal */
+    [data-reveal] {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 800ms ease, transform 800ms ease;
+    }
+
+    [data-reveal].is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Underline hover animation for nav links */
+    .nav-underline {
+      position: relative;
+    }
+
+    .nav-underline::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -10px;
+      width: 100%;
+      height: 2px;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 240ms ease;
+      background: linear-gradient(90deg, rgba(99, 102, 241, 1), rgba(168, 85, 247, 1));
+    }
+
+    .nav-underline:hover::after {
+      transform: scaleX(1);
+    }
+  </style>
+</head>
+
+<body class="bg-navy-950 text-white antialiased selection:bg-indigo-500/30">
+  <!-- ========================================
          NAVBAR
     ========================================= -->
-    <header id="navbar" class="fixed top-0 inset-x-0 z-50">
-      <div
-        id="navbarInner"
-        class="mx-auto max-w-7xl px-5 sm:px-6 h-20 flex items-center justify-between transition-all duration-300"
-      >
-        <!-- Logo -->
-        <a href="#top" class="flex items-center gap-2 font-display font-bold tracking-tight text-xl">
-          <span
-            class="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-white/10 ring-1 ring-white/10 backdrop-blur"
-          >
-            <i data-lucide="compass" class="h-5 w-5 text-indigo-300"></i>
-          </span>
-          <span>Travellingo</span>
+  <header id="navbar" class="fixed top-0 inset-x-0 z-50">
+    <div id="navbarInner"
+      class="mx-auto max-w-7xl px-5 sm:px-6 h-20 flex items-center justify-between transition-all duration-300">
+      <!-- Logo -->
+      <a href="#top" class="flex items-center gap-2 font-display font-bold tracking-tight text-xl">
+        <span
+          class="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-white/10 ring-1 ring-white/10 backdrop-blur">
+          <i data-lucide="compass" class="h-5 w-5 text-indigo-300"></i>
+        </span>
+        <span>Travellingo</span>
+      </a>
+
+      <!-- Desktop menu -->
+      <nav class="hidden md:flex items-center gap-8 text-sm text-white/75">
+        <a class="nav-underline hover:text-white transition-colors" href="#features">Features</a>
+        <a class="nav-underline hover:text-white transition-colors" href="#how-it-works">How it works</a>
+        <a class="nav-underline hover:text-white transition-colors" href="#destinations">Destinations</a>
+        <a class="nav-underline hover:text-white transition-colors" href="#pricing">Pricing</a>
+        <a class="nav-underline hover:text-white transition-colors" href="#about">About us</a>
+      </nav>
+
+      <!-- Right CTA -->
+      <div class="hidden md:flex items-center gap-3">
+        <a href="#early-access"
+          class="px-5 py-2.5 rounded-full bg-indigo-500 text-white font-semibold shadow-glow hover:brightness-110 hover:-translate-y-0.5 transition-all">
+          Join Early Access
         </a>
-
-        <!-- Desktop menu -->
-        <nav class="hidden md:flex items-center gap-8 text-sm text-white/75">
-          <a class="nav-underline hover:text-white transition-colors" href="#features">Features</a>
-          <a class="nav-underline hover:text-white transition-colors" href="#how-it-works">How it works</a>
-          <a class="nav-underline hover:text-white transition-colors" href="#destinations">Destinations</a>
-          <a class="nav-underline hover:text-white transition-colors" href="#pricing">Pricing</a>
-          <a class="nav-underline hover:text-white transition-colors" href="#about">About us</a>
-        </nav>
-
-        <!-- Right CTA -->
-        <div class="hidden md:flex items-center gap-3">
-          <a
-            href="#early-access"
-            class="px-5 py-2.5 rounded-full bg-indigo-500 text-white font-semibold shadow-glow hover:brightness-110 hover:-translate-y-0.5 transition-all"
-          >
-            Join Early Access
-          </a>
-        </div>
-
-        <!-- Mobile hamburger -->
-        <button
-          id="menuBtn"
-          class="md:hidden inline-flex items-center justify-center h-11 w-11 rounded-xl bg-white/10 ring-1 ring-white/10 backdrop-blur hover:bg-white/15 transition-colors"
-          aria-label="Open menu"
-          aria-expanded="false"
-        >
-          <i data-lucide="menu" class="h-5 w-5"></i>
-        </button>
       </div>
 
-      <!-- Mobile menu panel -->
-      <div id="mobileMenu" class="md:hidden hidden">
-        <div class="mx-auto max-w-7xl px-5 sm:px-6 pb-6">
-          <div class="rounded-3xl bg-navy-950 shadow-2xl ring-1 ring-white/10 p-4">
-            <div class="grid gap-2 text-sm text-white/80">
-              <a class="rounded-2xl px-4 py-3 hover:bg-white/10 transition-colors" href="#features">Features</a>
-              <a class="rounded-2xl px-4 py-3 hover:bg-white/10 transition-colors" href="#how-it-works">How it works</a>
-              <a class="rounded-2xl px-4 py-3 hover:bg-white/10 transition-colors" href="#destinations">Destinations</a>
-              <a class="rounded-2xl px-4 py-3 hover:bg-white/10 transition-colors" href="#pricing">Pricing</a>
-              <a class="rounded-2xl px-4 py-3 hover:bg-white/10 transition-colors" href="#about">About us</a>
-              <a
-                class="mt-2 rounded-2xl px-4 py-3 bg-white text-navy-950 font-semibold text-center hover:opacity-90 transition-opacity"
-                href="#early-access"
-              >
-                Join Early Access
-              </a>
-            </div>
+      <!-- Mobile hamburger -->
+      <button id="menuBtn"
+        class="md:hidden inline-flex items-center justify-center h-11 w-11 rounded-xl bg-white/10 ring-1 ring-white/10 backdrop-blur hover:bg-white/15 transition-colors"
+        aria-label="Open menu" aria-expanded="false">
+        <i data-lucide="menu" class="h-5 w-5"></i>
+      </button>
+    </div>
+
+    <!-- Mobile menu panel -->
+    <div id="mobileMenu" class="md:hidden hidden">
+      <div class="mx-auto max-w-7xl px-5 sm:px-6 pb-6">
+        <div class="rounded-3xl bg-navy-950 shadow-2xl ring-1 ring-white/10 p-4">
+          <div class="grid gap-2 text-sm text-white/80">
+            <a class="rounded-2xl px-4 py-3 hover:bg-white/10 transition-colors" href="#features">Features</a>
+            <a class="rounded-2xl px-4 py-3 hover:bg-white/10 transition-colors" href="#how-it-works">How it works</a>
+            <a class="rounded-2xl px-4 py-3 hover:bg-white/10 transition-colors" href="#destinations">Destinations</a>
+            <a class="rounded-2xl px-4 py-3 hover:bg-white/10 transition-colors" href="#pricing">Pricing</a>
+            <a class="rounded-2xl px-4 py-3 hover:bg-white/10 transition-colors" href="#about">About us</a>
+            <a class="mt-2 rounded-2xl px-4 py-3 bg-white text-navy-950 font-semibold text-center hover:opacity-90 transition-opacity"
+              href="#early-access">
+              Join Early Access
+            </a>
           </div>
         </div>
       </div>
-    </header>
+    </div>
+  </header>
 
-    <!-- ========================================
+  <!-- ========================================
          HERO SECTION
     ========================================= -->
-    <main id="top">
-      <!-- ========================================
+  <main id="top">
+    <!-- ========================================
            HERO SECTION (match shared screenshot)
       ========================================= -->
-      <section class="relative min-h-[90vh] lg:min-h-screen pt-24 pb-14 sm:pb-16 overflow-hidden">
-        <!-- Background -->
-        <div class="absolute inset-0 -z-10">
-          <img
-            class="h-full w-full object-cover"
-            src="https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=2400&q=80"
-            alt="Scenic coastline"
-            loading="lazy"
-          />
-          <!-- Dark overlay like reference screenshot -->
-          <div class="absolute inset-0 bg-gradient-to-r from-navy-950/95 via-navy-950/75 to-navy-950/45"></div>
-          <div class="absolute inset-0 bg-gradient-to-b from-navy-950/55 via-navy-950/35 to-navy-950/65"></div>
-          <div class="absolute inset-0 bg-[radial-gradient(900px_circle_at_70%_30%,rgba(99,102,241,0.12),transparent_55%)]"></div>
+    <section class="relative min-h-[90vh] lg:min-h-screen pt-24 pb-14 sm:pb-16 overflow-hidden">
+      <!-- Background -->
+      <div class="absolute inset-0 -z-10">
+        <img class="h-full w-full object-cover"
+          src="https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=2400&q=80"
+          alt="Scenic coastline" loading="lazy" />
+        <!-- Dark overlay like reference screenshot -->
+        <div class="absolute inset-0 bg-gradient-to-r from-navy-950/95 via-navy-950/75 to-navy-950/45"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-navy-950/55 via-navy-950/35 to-navy-950/65"></div>
+        <div
+          class="absolute inset-0 bg-[radial-gradient(900px_circle_at_70%_30%,rgba(99,102,241,0.12),transparent_55%)]">
         </div>
+      </div>
 
-        <!-- Soft glow -->
-        <div class="absolute inset-0 -z-10 pointer-events-none">
-          <div id="blobA" class="absolute -top-28 -left-24 h-80 w-80 rounded-full bg-indigo-500/25 blur-3xl animate-blob"></div>
-          <div id="blobB" class="absolute top-6 right-[-140px] h-96 w-96 rounded-full bg-violet-500/20 blur-3xl animate-blob [animation-delay:1800ms]"></div>
+      <!-- Soft glow -->
+      <div class="absolute inset-0 -z-10 pointer-events-none">
+        <div id="blobA" class="absolute -top-28 -left-24 h-80 w-80 rounded-full bg-indigo-500/25 blur-3xl animate-blob">
         </div>
+        <div id="blobB"
+          class="absolute top-6 right-[-140px] h-96 w-96 rounded-full bg-violet-500/20 blur-3xl animate-blob [animation-delay:1800ms]">
+        </div>
+      </div>
 
-        <div class="mx-auto max-w-7xl px-5 sm:px-6">
-          <div class="grid lg:grid-cols-2 gap-12 items-center">
-            <!-- Left -->
-            <div class="max-w-xl" data-reveal>
-              <div class="inline-flex items-center gap-2 text-[11px] tracking-widest text-white/70">
-                <span class="h-2 w-2 rounded-full bg-indigo-400"></span>
-                <span class="font-semibold">AI POWERED TRAVEL PLANNER</span>
-              </div>
-
-              <h1 class="mt-5 font-display font-extrabold tracking-tight text-5xl sm:text-6xl leading-[1.02]">
-                <span class="text-white">Plan Less.</span><br />
-                <span class="bg-gradient-to-r from-indigo-300 to-violet-300 bg-clip-text text-transparent">Experience More.</span>
-              </h1>
-
-              <p class="mt-5 text-white/75 text-lg leading-relaxed">
-                Travellingo is your AI travel companion that creates perfect trips, local experiences and stress-free journeys from start to finish.
-              </p>
-
-              <div class="mt-8 flex flex-col sm:flex-row gap-3">
-                <a
-                  href="#features"
-                  class="inline-flex items-center justify-center gap-2 rounded-full bg-indigo-500 px-7 py-3.5 font-semibold shadow-glow hover:brightness-110 transition"
-                >
-                  Start Planning
-                  <i data-lucide="arrow-right" class="h-4 w-4"></i>
-                </a>
-                <a
-                  href="#demo"
-                  class="inline-flex items-center justify-center gap-2 rounded-full bg-white/10 px-7 py-3.5 font-semibold ring-1 ring-white/15 backdrop-blur hover:bg-white/15 transition"
-                >
-                  <i data-lucide="play-circle" class="h-5 w-5"></i>
-                  Watch Demo
-                </a>
-              </div>
-
-              <div class="mt-7 flex items-center gap-4">
-                <div class="flex -space-x-2">
-                  <img class="h-9 w-9 rounded-full ring-2 ring-navy-950" src="https://i.pravatar.cc/80?img=12" alt="Traveler" loading="lazy" />
-                  <img class="h-9 w-9 rounded-full ring-2 ring-navy-950" src="https://i.pravatar.cc/80?img=32" alt="Traveler" loading="lazy" />
-                  <img class="h-9 w-9 rounded-full ring-2 ring-navy-950" src="https://i.pravatar.cc/80?img=47" alt="Traveler" loading="lazy" />
-                  <img class="h-9 w-9 rounded-full ring-2 ring-navy-950" src="https://i.pravatar.cc/80?img=18" alt="Traveler" loading="lazy" />
-                </div>
-                <div>
-                  <div class="flex items-center gap-1 text-amber-300">
-                    <span>★★★★★</span>
-                  </div>
-                  <div class="text-xs text-white/65">Join 2,000+ early travelers</div>
-                </div>
-              </div>
+      <div class="mx-auto max-w-7xl px-5 sm:px-6">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <!-- Left -->
+          <div class="max-w-xl" data-reveal>
+            <div class="inline-flex items-center gap-2 text-[11px] tracking-widest text-white/70">
+              <span class="h-2 w-2 rounded-full bg-indigo-400"></span>
+              <span class="font-semibold">AI POWERED TRAVEL PLANNER</span>
             </div>
 
-            <!-- Right: two angled phones -->
-            <div class="relative hidden lg:block" id="demo" data-reveal>
-              <div class="absolute -inset-10 bg-indigo-500/20 blur-3xl rounded-[60px]"></div>
+            <h1 class="mt-5 font-display font-extrabold tracking-tight text-5xl sm:text-6xl leading-[1.02]">
+              <span class="text-white">Plan Less.</span><br />
+              <span class="bg-gradient-to-r from-indigo-300 to-violet-300 bg-clip-text text-transparent">Experience
+                More.</span>
+            </h1>
 
-              <!-- Phone frame helper -->
-              <div class="relative h-[540px]">
-                <div class="absolute left-24 top-6 w-[280px] rotate-[-12deg] animate-floaty will-change-transform">
-                  <div class="rounded-[44px] bg-white/10 ring-1 ring-white/15 backdrop-blur p-3 shadow-soft">
-                    <div class="relative rounded-[36px] overflow-hidden bg-white">
-                      <div class="absolute top-3 left-1/2 -translate-x-1/2 h-6 w-28 rounded-full bg-black/80"></div>
-                      <img
-                        src="https://images.unsplash.com/photo-1511739001486-6bfe10ce785f?auto=format&fit=crop&w=1200&q=80"
-                        alt="App screen map"
-                        class="h-[520px] w-full object-cover"
-                        loading="lazy"
-                      />
-                    </div>
+            <p class="mt-5 text-white/75 text-lg leading-relaxed">
+              Travellingo is your AI travel companion that creates perfect trips, local experiences and stress-free
+              journeys from start to finish.
+            </p>
+
+            <div class="mt-8 flex flex-col sm:flex-row gap-3">
+              <a href="#features"
+                class="inline-flex items-center justify-center gap-2 rounded-full bg-indigo-500 px-7 py-3.5 font-semibold shadow-glow hover:brightness-110 transition">
+                Start Planning
+                <i data-lucide="arrow-right" class="h-4 w-4"></i>
+              </a>
+              <a href="#demo"
+                class="inline-flex items-center justify-center gap-2 rounded-full bg-white/10 px-7 py-3.5 font-semibold ring-1 ring-white/15 backdrop-blur hover:bg-white/15 transition">
+                <i data-lucide="play-circle" class="h-5 w-5"></i>
+                Watch Demo
+              </a>
+            </div>
+
+            <div class="mt-7 flex items-center gap-4">
+              <div class="flex -space-x-2">
+                <img class="h-9 w-9 rounded-full ring-2 ring-navy-950" src="https://i.pravatar.cc/80?img=12"
+                  alt="Traveler" loading="lazy" />
+                <img class="h-9 w-9 rounded-full ring-2 ring-navy-950" src="https://i.pravatar.cc/80?img=32"
+                  alt="Traveler" loading="lazy" />
+                <img class="h-9 w-9 rounded-full ring-2 ring-navy-950" src="https://i.pravatar.cc/80?img=47"
+                  alt="Traveler" loading="lazy" />
+                <img class="h-9 w-9 rounded-full ring-2 ring-navy-950" src="https://i.pravatar.cc/80?img=18"
+                  alt="Traveler" loading="lazy" />
+              </div>
+              <div>
+                <div class="flex items-center gap-1 text-amber-300">
+                  <span>★★★★★</span>
+                </div>
+                <div class="text-xs text-white/65">Join 2,000+ early travelers</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: two angled phones -->
+          <div class="relative hidden lg:block" id="demo" data-reveal>
+            <div class="absolute -inset-10 bg-indigo-500/20 blur-3xl rounded-[60px]"></div>
+
+            <!-- Phone frame helper -->
+            <div class="relative h-[540px]">
+              <div class="absolute left-24 top-6 w-[280px] rotate-[-12deg] animate-floaty will-change-transform">
+                <div class="rounded-[44px] bg-white/10 ring-1 ring-white/15 backdrop-blur p-3 shadow-soft">
+                  <div class="relative rounded-[36px] overflow-hidden bg-white">
+                    <div class="absolute top-3 left-1/2 -translate-x-1/2 h-6 w-28 rounded-full bg-black/80"></div>
+                    <img
+                      src="https://images.unsplash.com/photo-1511739001486-6bfe10ce785f?auto=format&fit=crop&w=1200&q=80"
+                      alt="App screen map" class="h-[520px] w-full object-cover" loading="lazy" />
                   </div>
                 </div>
+              </div>
 
-                <div class="absolute right-2 bottom-8 w-[280px] rotate-[10deg] animate-floaty will-change-transform [animation-delay:1200ms]">
-                  <div class="rounded-[44px] bg-white/10 ring-1 ring-white/15 backdrop-blur p-3 shadow-soft">
-                    <div class="relative rounded-[36px] overflow-hidden bg-white">
-                      <div class="absolute top-3 left-1/2 -translate-x-1/2 h-6 w-28 rounded-full bg-black/80"></div>
-                      <img
-                        src="https://images.unsplash.com/photo-1483683804023-6ccdb62f86ef?auto=format&fit=crop&w=1200&q=80"
-                        alt="App screen itinerary"
-                        class="h-[520px] w-full object-cover"
-                        loading="lazy"
-                      />
-                    </div>
+              <div
+                class="absolute right-2 bottom-8 w-[280px] rotate-[10deg] animate-floaty will-change-transform [animation-delay:1200ms]">
+                <div class="rounded-[44px] bg-white/10 ring-1 ring-white/15 backdrop-blur p-3 shadow-soft">
+                  <div class="relative rounded-[36px] overflow-hidden bg-white">
+                    <div class="absolute top-3 left-1/2 -translate-x-1/2 h-6 w-28 rounded-full bg-black/80"></div>
+                    <img
+                      src="https://images.unsplash.com/photo-1483683804023-6ccdb62f86ef?auto=format&fit=crop&w=1200&q=80"
+                      alt="App screen itinerary" class="h-[520px] w-full object-cover" loading="lazy" />
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- ========================================
+    <!-- ========================================
            PROBLEM SECTION
       ========================================= -->
-      <!-- ========================================
+    <!-- ========================================
            PROBLEM SECTION (match shared screenshot)
       ========================================= -->
-      <section id="problem" class="bg-white text-slate-900 pt-14 sm:pt-16 pb-6 sm:pb-8">
-        <div class="mx-auto max-w-7xl px-5 sm:px-6">
-          <div class="text-center" data-reveal>
-            <div class="text-xs font-semibold tracking-widest text-indigo-600">THE PROBLEM</div>
-            <h2 class="mt-3 font-display font-bold text-3xl sm:text-4xl">Travel planning is a mess.</h2>
-          </div>
-
-          <div class="mt-8 grid grid-cols-2 md:grid-cols-5 gap-7 md:gap-0 md:divide-x md:divide-slate-200 items-start" data-reveal>
-            <div class="text-center md:px-8">
-              <div class="mx-auto h-14 w-14 rounded-2xl bg-indigo-50 text-indigo-600 ring-1 ring-slate-200 flex items-center justify-center">
-                <i data-lucide="ticket" class="h-6 w-6"></i>
-              </div>
-              <div class="mt-3 text-xs text-slate-600">Booking here</div>
-            </div>
-            <div class="text-center md:px-8">
-              <div class="mx-auto h-14 w-14 rounded-2xl bg-emerald-50 text-emerald-600 ring-1 ring-slate-200 flex items-center justify-center">
-                <i data-lucide="map" class="h-6 w-6"></i>
-              </div>
-              <div class="mt-3 text-xs text-slate-600">Maps there</div>
-            </div>
-            <div class="text-center md:px-8">
-              <div class="mx-auto h-14 w-14 rounded-2xl bg-amber-50 text-amber-600 ring-1 ring-slate-200 flex items-center justify-center">
-                <i data-lucide="notebook-pen" class="h-6 w-6"></i>
-              </div>
-              <div class="mt-3 text-xs text-slate-600">Notes everywhere</div>
-            </div>
-            <div class="text-center md:px-8">
-              <div class="mx-auto h-14 w-14 rounded-2xl bg-violet-50 text-violet-600 ring-1 ring-slate-200 flex items-center justify-center">
-                <i data-lucide="messages-square" class="h-6 w-6"></i>
-              </div>
-              <div class="mt-3 text-xs text-slate-600">WhatsApp for<br />group trips</div>
-            </div>
-            <div class="text-center md:px-8">
-              <div class="mx-auto h-14 w-14 rounded-2xl bg-pink-50 text-pink-600 ring-1 ring-slate-200 flex items-center justify-center">
-                <i data-lucide="newspaper" class="h-6 w-6"></i>
-              </div>
-              <div class="mt-3 text-xs text-slate-600">Random blogs<br />for tips</div>
-            </div>
-          </div>
-
-          <div class="mt-6 text-center text-sm text-slate-600" data-reveal>Too much chaos. Too much stress.</div>
+    <section id="problem" class="bg-white text-slate-900 pt-14 sm:pt-16 pb-6 sm:pb-8">
+      <div class="mx-auto max-w-7xl px-5 sm:px-6">
+        <div class="text-center" data-reveal>
+          <div class="text-xs font-semibold tracking-widest text-indigo-600">THE PROBLEM</div>
+          <h2 class="mt-3 font-display font-bold text-3xl sm:text-4xl">Travel planning is a mess.</h2>
         </div>
-      </section>
 
-      <!-- ========================================
+        <div class="mt-8 grid grid-cols-2 md:grid-cols-5 gap-7 md:gap-0 md:divide-x md:divide-slate-200 items-start"
+          data-reveal>
+          <div class="text-center md:px-8">
+            <div
+              class="mx-auto h-14 w-14 rounded-2xl bg-indigo-50 text-indigo-600 ring-1 ring-slate-200 flex items-center justify-center">
+              <i data-lucide="ticket" class="h-6 w-6"></i>
+            </div>
+            <div class="mt-3 text-xs text-slate-600">Booking here</div>
+          </div>
+          <div class="text-center md:px-8">
+            <div
+              class="mx-auto h-14 w-14 rounded-2xl bg-emerald-50 text-emerald-600 ring-1 ring-slate-200 flex items-center justify-center">
+              <i data-lucide="map" class="h-6 w-6"></i>
+            </div>
+            <div class="mt-3 text-xs text-slate-600">Maps there</div>
+          </div>
+          <div class="text-center md:px-8">
+            <div
+              class="mx-auto h-14 w-14 rounded-2xl bg-amber-50 text-amber-600 ring-1 ring-slate-200 flex items-center justify-center">
+              <i data-lucide="notebook-pen" class="h-6 w-6"></i>
+            </div>
+            <div class="mt-3 text-xs text-slate-600">Notes everywhere</div>
+          </div>
+          <div class="text-center md:px-8">
+            <div
+              class="mx-auto h-14 w-14 rounded-2xl bg-violet-50 text-violet-600 ring-1 ring-slate-200 flex items-center justify-center">
+              <i data-lucide="messages-square" class="h-6 w-6"></i>
+            </div>
+            <div class="mt-3 text-xs text-slate-600">WhatsApp for<br />group trips</div>
+          </div>
+          <div class="text-center md:px-8">
+            <div
+              class="mx-auto h-14 w-14 rounded-2xl bg-pink-50 text-pink-600 ring-1 ring-slate-200 flex items-center justify-center">
+              <i data-lucide="newspaper" class="h-6 w-6"></i>
+            </div>
+            <div class="mt-3 text-xs text-slate-600">Random blogs<br />for tips</div>
+          </div>
+        </div>
+
+        <div class="mt-6 text-center text-sm text-slate-600" data-reveal>Too much chaos. Too much stress.</div>
+      </div>
+    </section>
+
+    <!-- ========================================
            SOLUTION SECTION (match shared screenshot)
       ========================================= -->
-      <section id="features" class="bg-white text-slate-900 pt-8 sm:pt-10 pb-6 sm:pb-8">
-        <div class="mx-auto max-w-7xl px-5 sm:px-6">
-          <div class="text-center" data-reveal>
-            <div class="text-xs font-semibold tracking-widest text-indigo-600">THE SOLUTION</div>
-            <h2 class="mt-3 font-display font-bold text-3xl sm:text-4xl">One smart travel system.</h2>
-            <p class="mt-2 text-slate-600">Everything you need. All in one place.</p>
+    <section id="features" class="bg-white text-slate-900 pt-8 sm:pt-10 pb-6 sm:pb-8">
+      <div class="mx-auto max-w-7xl px-5 sm:px-6">
+        <div class="text-center" data-reveal>
+          <div class="text-xs font-semibold tracking-widest text-indigo-600">THE SOLUTION</div>
+          <h2 class="mt-3 font-display font-bold text-3xl sm:text-4xl">One smart travel system.</h2>
+          <p class="mt-2 text-slate-600">Everything you need. All in one place.</p>
+        </div>
+
+        <div class="mt-8 grid gap-4 md:grid-cols-5" data-reveal>
+          <div
+            class="rounded-3xl bg-white shadow-[0_10px_40px_rgba(2,6,23,0.08)] ring-1 ring-slate-200 p-6 text-center hover:-translate-y-1 transition">
+            <div class="mx-auto h-12 w-12 rounded-full bg-blue-500/15 text-blue-600 flex items-center justify-center">
+              <i data-lucide="briefcase" class="h-6 w-6"></i>
+            </div>
+            <div class="mt-4 font-semibold text-sm">Smart Trip Planner</div>
+            <div class="mt-2 text-xs text-slate-600">Plan multi-city trips with AI. Get the best routes, times and
+              experiences.</div>
           </div>
 
-          <div class="mt-8 grid gap-4 md:grid-cols-5" data-reveal>
-            <div class="rounded-3xl bg-white shadow-[0_10px_40px_rgba(2,6,23,0.08)] ring-1 ring-slate-200 p-6 text-center hover:-translate-y-1 transition">
-              <div class="mx-auto h-12 w-12 rounded-full bg-blue-500/15 text-blue-600 flex items-center justify-center">
-                <i data-lucide="briefcase" class="h-6 w-6"></i>
-              </div>
-              <div class="mt-4 font-semibold text-sm">Smart Trip Planner</div>
-              <div class="mt-2 text-xs text-slate-600">Plan multi-city trips with AI. Get the best routes, times and experiences.</div>
+          <div
+            class="rounded-3xl bg-white shadow-[0_10px_40px_rgba(2,6,23,0.08)] ring-1 ring-slate-200 p-6 text-center hover:-translate-y-1 transition">
+            <div
+              class="mx-auto h-12 w-12 rounded-full bg-emerald-500/15 text-emerald-600 flex items-center justify-center">
+              <i data-lucide="messages-square" class="h-6 w-6"></i>
             </div>
+            <div class="mt-4 font-semibold text-sm">Live Travel Assistant</div>
+            <div class="mt-2 text-xs text-slate-600">Real-time help, local tips, traffic, delays and smart
+              recommendations.</div>
+          </div>
 
-            <div class="rounded-3xl bg-white shadow-[0_10px_40px_rgba(2,6,23,0.08)] ring-1 ring-slate-200 p-6 text-center hover:-translate-y-1 transition">
-              <div class="mx-auto h-12 w-12 rounded-full bg-emerald-500/15 text-emerald-600 flex items-center justify-center">
-                <i data-lucide="messages-square" class="h-6 w-6"></i>
-              </div>
-              <div class="mt-4 font-semibold text-sm">Live Travel Assistant</div>
-              <div class="mt-2 text-xs text-slate-600">Real-time help, local tips, traffic, delays and smart recommendations.</div>
+          <div
+            class="rounded-3xl bg-white shadow-[0_10px_40px_rgba(2,6,23,0.08)] ring-1 ring-slate-200 p-6 text-center hover:-translate-y-1 transition">
+            <div class="mx-auto h-12 w-12 rounded-full bg-amber-500/15 text-amber-600 flex items-center justify-center">
+              <i data-lucide="star" class="h-6 w-6"></i>
             </div>
+            <div class="mt-4 font-semibold text-sm">Local Insider AI</div>
+            <div class="mt-2 text-xs text-slate-600">Discover hidden gems, local restaurants, parking, and must-see
+              spots.</div>
+          </div>
 
-            <div class="rounded-3xl bg-white shadow-[0_10px_40px_rgba(2,6,23,0.08)] ring-1 ring-slate-200 p-6 text-center hover:-translate-y-1 transition">
-              <div class="mx-auto h-12 w-12 rounded-full bg-amber-500/15 text-amber-600 flex items-center justify-center">
-                <i data-lucide="star" class="h-6 w-6"></i>
-              </div>
-              <div class="mt-4 font-semibold text-sm">Local Insider AI</div>
-              <div class="mt-2 text-xs text-slate-600">Discover hidden gems, local restaurants, parking, and must-see spots.</div>
+          <div
+            class="rounded-3xl bg-white shadow-[0_10px_40px_rgba(2,6,23,0.08)] ring-1 ring-slate-200 p-6 text-center hover:-translate-y-1 transition">
+            <div
+              class="mx-auto h-12 w-12 rounded-full bg-violet-500/15 text-violet-600 flex items-center justify-center">
+              <i data-lucide="users" class="h-6 w-6"></i>
             </div>
-
-            <div class="rounded-3xl bg-white shadow-[0_10px_40px_rgba(2,6,23,0.08)] ring-1 ring-slate-200 p-6 text-center hover:-translate-y-1 transition">
-              <div class="mx-auto h-12 w-12 rounded-full bg-violet-500/15 text-violet-600 flex items-center justify-center">
-                <i data-lucide="users" class="h-6 w-6"></i>
-              </div>
-              <div class="mt-4 font-semibold text-sm">Group Travel</div>
-              <div class="mt-2 text-xs text-slate-600">Share plans, manage expenses and stay in sync with your group.</div>
+            <div class="mt-4 font-semibold text-sm">Group Travel</div>
+            <div class="mt-2 text-xs text-slate-600">Share plans, manage expenses and stay in sync with your group.
             </div>
+          </div>
 
-            <div class="rounded-3xl bg-white shadow-[0_10px_40px_rgba(2,6,23,0.08)] ring-1 ring-slate-200 p-6 text-center hover:-translate-y-1 transition">
-              <div class="mx-auto h-12 w-12 rounded-full bg-pink-500/15 text-pink-600 flex items-center justify-center">
-                <i data-lucide="heart" class="h-6 w-6"></i>
-              </div>
-              <div class="mt-4 font-semibold text-sm">Memory + Return Engine</div>
-              <div class="mt-2 text-xs text-slate-600">Your trips, memories and recommendations for your next adventures.</div>
+          <div
+            class="rounded-3xl bg-white shadow-[0_10px_40px_rgba(2,6,23,0.08)] ring-1 ring-slate-200 p-6 text-center hover:-translate-y-1 transition">
+            <div class="mx-auto h-12 w-12 rounded-full bg-pink-500/15 text-pink-600 flex items-center justify-center">
+              <i data-lucide="heart" class="h-6 w-6"></i>
+            </div>
+            <div class="mt-4 font-semibold text-sm">Memory + Return Engine</div>
+            <div class="mt-2 text-xs text-slate-600">Your trips, memories and recommendations for your next adventures.
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- ========================================
+    <!-- ========================================
            HOW IT WORKS (light section)
       ========================================= -->
-      <!-- <section id="how-it-works" class="bg-white text-slate-900 pt-10 sm:pt-12 pb-16 sm:pb-20">
+    <!-- <section id="how-it-works" class="bg-white text-slate-900 pt-10 sm:pt-12 pb-16 sm:pb-20">
         <div class="mx-auto max-w-7xl px-5 sm:px-6">
           <div class="grid lg:grid-cols-2 gap-10 items-center">
             <div data-reveal>
@@ -498,186 +505,199 @@
         </div>
       </section> -->
 
-      <!-- ========================================
+    <!-- ========================================
            MAP / DEMO SECTION
       ========================================= -->
-      <section id="destinations" class="bg-white text-slate-900 pt-16 sm:pt-20 pb-6 sm:pb-8">
-        <div class="mx-auto max-w-7xl px-5 sm:px-6">
-          <div class="text-center" data-reveal>
-            <div class="text-xs font-semibold tracking-widest text-indigo-600">SEE IT IN ACTION</div>
-            <h2 class="mt-3 font-display font-bold text-3xl sm:text-4xl">Venice in 3 Days – Planned by Travellingo</h2>
-          </div>
+    <section id="destinations" class="bg-white text-slate-900 pt-16 sm:pt-20 pb-6 sm:pb-8">
+      <div class="mx-auto max-w-7xl px-5 sm:px-6">
+        <div class="text-center" data-reveal>
+          <div class="text-xs font-semibold tracking-widest text-indigo-600">SEE IT IN ACTION</div>
+          <h2 class="mt-3 font-display font-bold text-3xl sm:text-4xl">Venice in 3 Days – Planned by Travellingo</h2>
+        </div>
 
-          <div class="mt-10 grid lg:grid-cols-12 gap-10 items-center" data-reveal>
-            <!-- Left: vertical checklist -->
-            <div class="lg:col-span-4 pl-3 sm:pl-4 lg:pl-6">
-              <div class="relative pl-2">
-                <!-- connector line -->
-                <div class="absolute left-6 top-2 bottom-2 w-px bg-slate-200"></div>
+        <div class="mt-10 grid lg:grid-cols-12 gap-10 items-center" data-reveal>
+          <!-- Left: vertical checklist -->
+          <div class="lg:col-span-4 pl-3 sm:pl-4 lg:pl-6">
+            <div class="relative pl-2">
+              <!-- connector line -->
+              <div class="absolute left-6 top-2 bottom-2 w-px bg-slate-200"></div>
 
-                <div class="space-y-7">
-                  <div class="relative flex gap-5">
-                    <div class="relative z-10 h-10 w-10 rounded-full bg-indigo-500 text-white flex items-center justify-center font-bold shadow-sm">P</div>
-                    <div>
-                      <div class="font-semibold">Parking Suggestion</div>
-                      <div class="text-sm text-slate-600">Best option: Tronchetto Parking</div>
-                      <div class="text-sm text-slate-600">Reserve for €35/day</div>
-                    </div>
+              <div class="space-y-7">
+                <div class="relative flex gap-5">
+                  <div
+                    class="relative z-10 h-10 w-10 rounded-full bg-indigo-500 text-white flex items-center justify-center font-bold shadow-sm">
+                    P</div>
+                  <div>
+                    <div class="font-semibold">Parking Suggestion</div>
+                    <div class="text-sm text-slate-600">Best option: Tronchetto Parking</div>
+                    <div class="text-sm text-slate-600">Reserve for €35/day</div>
                   </div>
+                </div>
 
-                  <div class="relative flex gap-5">
-                    <div class="relative z-10 h-10 w-10 rounded-full bg-emerald-500 text-white flex items-center justify-center font-bold shadow-sm">W</div>
-                    <div>
-                      <div class="font-semibold">Water Taxi to Apartment</div>
-                      <div class="text-sm text-slate-600">Line 2 • 15 min • €9.50</div>
-                      <div class="text-sm text-slate-600">Get off at San Marco</div>
-                    </div>
+                <div class="relative flex gap-5">
+                  <div
+                    class="relative z-10 h-10 w-10 rounded-full bg-emerald-500 text-white flex items-center justify-center font-bold shadow-sm">
+                    W</div>
+                  <div>
+                    <div class="font-semibold">Water Taxi to Apartment</div>
+                    <div class="text-sm text-slate-600">Line 2 • 15 min • €9.50</div>
+                    <div class="text-sm text-slate-600">Get off at San Marco</div>
                   </div>
+                </div>
 
-                  <div class="relative flex gap-5">
-                    <div class="relative z-10 h-10 w-10 rounded-full bg-amber-500 text-white flex items-center justify-center font-bold shadow-sm">H</div>
-                    <div>
-                      <div class="font-semibold">Hidden Breakfast Spot</div>
-                      <div class="text-sm text-slate-600">Rosa Salva Bakery</div>
-                      <div class="text-sm text-slate-600">2 min walk • Local favorite</div>
-                    </div>
+                <div class="relative flex gap-5">
+                  <div
+                    class="relative z-10 h-10 w-10 rounded-full bg-amber-500 text-white flex items-center justify-center font-bold shadow-sm">
+                    H</div>
+                  <div>
+                    <div class="font-semibold">Hidden Breakfast Spot</div>
+                    <div class="text-sm text-slate-600">Rosa Salva Bakery</div>
+                    <div class="text-sm text-slate-600">2 min walk • Local favorite</div>
                   </div>
+                </div>
 
-                  <div class="relative flex gap-5">
-                    <div class="relative z-10 h-10 w-10 rounded-full bg-pink-500 text-white flex items-center justify-center font-bold shadow-sm">AI</div>
-                    <div>
-                      <div class="font-semibold">AI Reminder</div>
-                      <div class="text-sm text-slate-600">Leave in 10 min</div>
-                      <div class="text-sm text-slate-600">To arrive on time for your tour</div>
-                    </div>
+                <div class="relative flex gap-5">
+                  <div
+                    class="relative z-10 h-10 w-10 rounded-full bg-pink-500 text-white flex items-center justify-center font-bold shadow-sm">
+                    AI</div>
+                  <div>
+                    <div class="font-semibold">AI Reminder</div>
+                    <div class="text-sm text-slate-600">Leave in 10 min</div>
+                    <div class="text-sm text-slate-600">To arrive on time for your tour</div>
                   </div>
                 </div>
               </div>
             </div>
+          </div>
 
-            <!-- Right: map card with floating preview -->
-            <div class="lg:col-span-8">
-              <div class="relative rounded-[28px] bg-white border border-slate-200 shadow-[0_18px_70px_rgba(2,6,23,0.10)] overflow-hidden">
-                <!-- map image -->
-                <img
-                  src="/src/assets/map_mockup.png"
-                  onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1526481280695-3c687fd5432c?auto=format&fit=crop&w=2200&q=80';"
-                  alt="Venice map mock"
-                  class="h-[320px] sm:h-[380px] w-full object-cover"
-                  loading="lazy"
-                />
+          <!-- Right: map card with floating preview -->
+          <div class="lg:col-span-8">
+            <div
+              class="relative rounded-[28px] bg-white border border-slate-200 shadow-[0_18px_70px_rgba(2,6,23,0.10)] overflow-hidden">
+              <!-- map image -->
+              <img src="/src/assets/map_mockup.png"
+                onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1526481280695-3c687fd5432c?auto=format&fit=crop&w=2200&q=80';"
+                alt="Venice map mock" class="h-[320px] sm:h-[380px] w-full object-cover" loading="lazy" />
 
-                <!-- overlays: route + pins -->
-                <div class="absolute inset-0">
-                  <div class="absolute inset-0 pointer-events-none bg-gradient-to-r from-white/25 via-transparent to-transparent"></div>
+              <!-- overlays: route + pins -->
+              <div class="absolute inset-0">
+                <div
+                  class="absolute inset-0 pointer-events-none bg-gradient-to-r from-white/25 via-transparent to-transparent">
+                </div>
 
-                  <!-- route (simple dashed line) -->
-                  <svg class="absolute inset-0 h-full w-full" viewBox="0 0 1000 600" preserveAspectRatio="none">
-                    <path
-                      d="M230,260 C330,220 390,330 470,310 C560,285 585,350 670,335"
-                      fill="none"
-                      stroke="rgba(99,102,241,0.65)"
-                      stroke-width="6"
-                      stroke-linecap="round"
-                      stroke-dasharray="10 12"
-                    />
-                  </svg>
+                <!-- route (simple dashed line) -->
+                <svg class="absolute inset-0 h-full w-full" viewBox="0 0 1000 600" preserveAspectRatio="none">
+                  <path d="M230,260 C330,220 390,330 470,310 C560,285 585,350 670,335" fill="none"
+                    stroke="rgba(99,102,241,0.65)" stroke-width="6" stroke-linecap="round" stroke-dasharray="10 12" />
+                </svg>
 
-                  <!-- pins -->
-                  <div class="absolute left-[22%] top-[44%]">
-                    <div class="h-12 w-12 rounded-full bg-indigo-500 text-white flex items-center justify-center font-bold shadow-lg">P</div>
+                <!-- pins -->
+                <div class="absolute left-[22%] top-[44%]">
+                  <div
+                    class="h-12 w-12 rounded-full bg-indigo-500 text-white flex items-center justify-center font-bold shadow-lg">
+                    P</div>
+                </div>
+                <div class="absolute left-[48%] top-[48%]">
+                  <div class="h-12 w-12 rounded-full bg-sky-500 text-white flex items-center justify-center shadow-lg">
+                    <i data-lucide="boat" class="h-6 w-6"></i>
                   </div>
-                  <div class="absolute left-[48%] top-[48%]">
-                    <div class="h-12 w-12 rounded-full bg-sky-500 text-white flex items-center justify-center shadow-lg">
-                      <i data-lucide="boat" class="h-6 w-6"></i>
-                    </div>
+                </div>
+                <div class="absolute left-[70%] top-[55%]">
+                  <div
+                    class="h-12 w-12 rounded-full bg-amber-500 text-white flex items-center justify-center shadow-lg">
+                    <i data-lucide="star" class="h-6 w-6"></i>
                   </div>
-                  <div class="absolute left-[70%] top-[55%]">
-                    <div class="h-12 w-12 rounded-full bg-amber-500 text-white flex items-center justify-center shadow-lg">
-                      <i data-lucide="star" class="h-6 w-6"></i>
-                    </div>
-                  </div>
+                </div>
 
-                  <!-- floating preview card -->
-                  <div class="absolute right-8 top-1/2 -translate-y-1/2 w-64 bg-white/90 backdrop-blur border border-slate-200 rounded-2xl shadow-[0_16px_50px_rgba(2,6,23,0.20)] overflow-hidden">
-                    <div class="p-3">
-                      <img
-                        src="https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?auto=format&fit=crop&w=1200&q=80"
-                        alt="Evening in Venice"
-                        class="h-28 w-full rounded-xl object-cover"
-                        loading="lazy"
-                      />
-                    </div>
-                    <div class="px-4 pb-4">
-                      <div class="font-semibold">Evening in Venice</div>
-                      <div class="mt-1 text-sm text-slate-600">Sunset gondola ride</div>
-                      <div class="mt-1 text-sm text-slate-600">18:30 • €80</div>
-                      <button class="mt-4 w-full rounded-xl bg-indigo-500 py-2.5 text-sm font-semibold text-white hover:brightness-110 transition">
-                        Add to Plan
-                      </button>
-                    </div>
+                <!-- floating preview card -->
+                <div
+                  class="absolute right-8 top-1/2 -translate-y-1/2 w-64 bg-white/90 backdrop-blur border border-slate-200 rounded-2xl shadow-[0_16px_50px_rgba(2,6,23,0.20)] overflow-hidden">
+                  <div class="p-3">
+                    <img
+                      src="https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?auto=format&fit=crop&w=1200&q=80"
+                      alt="Evening in Venice" class="h-28 w-full rounded-xl object-cover" loading="lazy" />
+                  </div>
+                  <div class="px-4 pb-4">
+                    <div class="font-semibold">Evening in Venice</div>
+                    <div class="mt-1 text-sm text-slate-600">Sunset gondola ride</div>
+                    <div class="mt-1 text-sm text-slate-600">18:30 • €80</div>
+                    <button
+                      class="mt-4 w-full rounded-xl bg-indigo-500 py-2.5 text-sm font-semibold text-white hover:brightness-110 transition">
+                      Add to Plan
+                    </button>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- ========================================
+    <!-- ========================================
            TESTIMONIAL SECTION
       ========================================= -->
-      <section class="bg-white text-slate-900 pt-10 sm:pt-12 pb-16 sm:pb-20" id="about">
-        <div class="mx-auto max-w-7xl px-5 sm:px-6">
-          <div class="text-center" data-reveal>
-            <div class="text-xs font-semibold tracking-widest text-indigo-600">LOVED BY EARLY TRAVELERS</div>
-            <h2 class="font-display font-bold text-3xl sm:text-4xl">Real trips. Real experiences.</h2>
+    <section class="bg-white text-slate-900 pt-10 sm:pt-12 pb-16 sm:pb-20" id="about">
+      <div class="mx-auto max-w-7xl px-5 sm:px-6">
+        <div class="text-center" data-reveal>
+          <div class="inline text-xs font-semibold tracking-widest text-indigo-600">
+            WHAT TRAVELERS HAVE BEEN WAITING FOR
           </div>
+          <h2 class="font-display font-bold text-3xl sm:text-4xl">A smarter way to plan every trip</h2>
 
-          <div class="mt-10 grid gap-5 md:grid-cols-3" data-reveal>
-            <!-- Testimonial 1 -->
-            <article class="rounded-3xl bg-white border border-slate-200 shadow-[0_14px_50px_rgba(2,6,23,.08)] p-7 hover:-translate-y-1 hover:shadow-[0_18px_70px_rgba(2,6,23,.12)] transition-all">
-              <div class="flex items-start gap-4">
-                <img class="h-10 w-10 rounded-full" src="https://i.pravatar.cc/120?img=14" alt="Ana avatar" loading="lazy" />
-                <div class="text-sm text-slate-700 leading-relaxed">
-                  “Travellingo saved us hours of planning. Our trip was smoother, cheaper and 10x more fun!”
-                  <div class="mt-4 font-semibold text-slate-900">— Ana &amp; Marko</div>
-                  <div class="text-xs text-slate-500">Rome • Florence • Venice</div>
-                </div>
-              </div>
-            </article>
-
-            <!-- Testimonial 2 -->
-            <article class="rounded-3xl bg-white border border-slate-200 shadow-[0_14px_50px_rgba(2,6,23,.08)] p-7 hover:-translate-y-1 hover:shadow-[0_18px_70px_rgba(2,6,23,.12)] transition-all">
-              <div class="flex items-start gap-4">
-                <img class="h-10 w-10 rounded-full" src="https://i.pravatar.cc/120?img=12" alt="Jelena avatar" loading="lazy" />
-                <div class="text-sm text-slate-700 leading-relaxed">
-                  “The local tips are unreal. We found places we would never find on Google.”
-                  <div class="mt-4 font-semibold text-slate-900">— Jelena</div>
-                  <div class="text-xs text-slate-500">Barcelona</div>
-                </div>
-              </div>
-            </article>
-
-            <!-- Testimonial 3 -->
-            <article class="rounded-3xl bg-white border border-slate-200 shadow-[0_14px_50px_rgba(2,6,23,.08)] p-7 hover:-translate-y-1 hover:shadow-[0_18px_70px_rgba(2,6,23,.12)] transition-all">
-              <div class="flex items-start gap-4">
-                <img class="h-10 w-10 rounded-full" src="https://i.pravatar.cc/120?img=15" alt="Nikola avatar" loading="lazy" />
-                <div class="text-sm text-slate-700 leading-relaxed">
-                  “Perfect for group trips! Everyone knows the plan and we stay in sync.”
-                  <div class="mt-4 font-semibold text-slate-900">— Nikola</div>
-                  <div class="text-xs text-slate-500">Croatia Roadtrip</div>
-                </div>
-              </div>
-            </article>
-          </div>
         </div>
-      </section>
 
-      <!-- ========================================
+        <div class="mt-10 grid gap-5 md:grid-cols-3" data-reveal>
+          <!-- Testimonial 1 -->
+          <article
+            class="rounded-3xl bg-white border border-slate-200 shadow-[0_14px_50px_rgba(2,6,23,.08)] p-7 hover:-translate-y-1 hover:shadow-[0_18px_70px_rgba(2,6,23,.12)] transition-all">
+            <div class="flex items-start gap-4">
+              <img class="h-10 w-10 rounded-full" src="https://i.pravatar.cc/150?img=32" alt="Ana avatar"
+                loading="lazy" />
+              <div class="text-sm text-slate-700 leading-relaxed">
+                “Finally, an app that doesn’t just show places, but actually helps me plan my entire trip without
+                stress.”
+                <div class="mt-4 font-semibold text-slate-900">Anna K.</div>
+                <div class="text-xs text-slate-500">Avid traveler</div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Testimonial 2 -->
+          <article
+            class="rounded-3xl bg-white border border-slate-200 shadow-[0_14px_50px_rgba(2,6,23,.08)] p-7 hover:-translate-y-1 hover:shadow-[0_18px_70px_rgba(2,6,23,.12)] transition-all">
+            <div class="flex items-start gap-4">
+              <img class="h-10 w-10 rounded-full" src="https://i.pravatar.cc/150?img=12" alt="Jelena avatar"
+                loading="lazy" />
+              <div class="text-sm text-slate-700 leading-relaxed">
+                “I can’t wait to have one place where my itinerary, map, and ideas are all connected.”
+                <div class="mt-4 font-semibold text-slate-900">Mark D.</div>
+                <div class="text-xs text-slate-500">Digital nomad</div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Testimonial 3 -->
+          <article
+            class="rounded-3xl bg-white border border-slate-200 shadow-[0_14px_50px_rgba(2,6,23,.08)] p-7 hover:-translate-y-1 hover:shadow-[0_18px_70px_rgba(2,6,23,.12)] transition-all">
+            <div class="flex items-start gap-4">
+              <img class="h-10 w-10 rounded-full" src="https://i.pravatar.cc/150?img=47" alt="Nikola avatar"
+                loading="lazy" />
+              <div class="text-sm text-slate-700 leading-relaxed">
+                “If this really works the way it looks, it’s going to replace every travel app I currently use.”
+                <div class="mt-4 font-semibold text-slate-900">Sophie L.</div>
+                <div class="text-xs text-slate-500">Weekend explorer</div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================
            PRICING SECTION (simple placeholder)
       ========================================= -->
-      <!-- <section id="pricing" class="relative py-20 sm:py-24">
+    <!-- <section id="pricing" class="relative py-20 sm:py-24">
         <div class="absolute inset-0 -z-10">
           <div class="absolute inset-0 bg-gradient-to-b from-navy-950 to-navy-900"></div>
           <div class="absolute inset-0 bg-[radial-gradient(900px_circle_at_30%_20%,rgba(99,102,241,.16),transparent_45%)]"></div>
@@ -721,183 +741,164 @@
         </div>
       </section> -->
 
-      <!-- ========================================
+    <!-- ========================================
            CTA SECTION
       ========================================= -->
-      <section id="early-access" class="relative overflow-hidden pt-16 sm:pt-20 pb-24">
-        <div class="absolute inset-0 -z-10">
-          <img
-            class="h-full w-full object-cover opacity-65"
-            src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=2400&q=80"
-            alt="CTA travel background"
-            loading="lazy"
-          />
-          <div class="absolute inset-0 bg-gradient-to-r from-navy-950/75 via-navy-950/45 to-navy-950/20"></div>
-          <div class="absolute inset-0 bg-gradient-to-b from-navy-950/20 via-navy-950/25 to-navy-950/60"></div>
-        </div>
+    <section id="early-access" class="relative overflow-hidden pt-16 sm:pt-20 pb-24">
+      <div class="absolute inset-0 -z-10">
+        <img class="h-full w-full object-cover opacity-65"
+          src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=2400&q=80"
+          alt="CTA travel background" loading="lazy" />
+        <div class="absolute inset-0 bg-gradient-to-r from-navy-950/75 via-navy-950/45 to-navy-950/20"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-navy-950/20 via-navy-950/25 to-navy-950/60"></div>
+      </div>
 
+      <div class="mx-auto max-w-7xl px-5 sm:px-6">
+        <div class="mx-auto max-w-4xl text-center" data-reveal>
+          <h2 class="font-display font-extrabold tracking-tight text-3xl sm:text-5xl text-white">Ready to travel
+            smarter?</h2>
+          <p class="mt-3 text-white/80 text-base sm:text-lg">
+            Join early access and be the first to experience<br class="hidden sm:block" />
+            stress-free travel planning.
+          </p>
+
+          <form class="mt-7 flex flex-col sm:flex-row items-center justify-center gap-3 max-w-2xl mx-auto">
+            <input type="email" required placeholder="Enter your email"
+              class="w-full sm:flex-1 rounded-xl bg-white/95 px-5 py-3.5 text-slate-900 placeholder-slate-500 shadow-soft focus:outline-none focus:ring-2 focus:ring-indigo-500/60" />
+            <button type="submit"
+              class="w-full sm:w-auto rounded-xl bg-indigo-500 px-6 py-3.5 font-semibold text-white shadow-glow hover:brightness-110 transition">
+              Join Early Access
+            </button>
+          </form>
+
+          <div class="mt-3 text-xs text-white/70">No spam. Just early access.</div>
+        </div>
+      </div>
+
+      <!-- Footer bar over the same background (matches screenshot) -->
+      <footer class="absolute bottom-0 left-0 right-0 bg-black/55 backdrop-blur-xl border-t border-white/10">
         <div class="mx-auto max-w-7xl px-5 sm:px-6">
-          <div class="mx-auto max-w-4xl text-center" data-reveal>
-            <h2 class="font-display font-extrabold tracking-tight text-3xl sm:text-5xl text-white">Ready to travel smarter?</h2>
-            <p class="mt-3 text-white/80 text-base sm:text-lg">
-              Join early access and be the first to experience<br class="hidden sm:block" />
-              stress-free travel planning.
-            </p>
+          <div class="h-16 sm:h-20 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <!-- Left -->
+            <a href="#top" class="flex items-center gap-2 font-display font-bold tracking-tight text-lg text-white">
+              <i data-lucide="map-pin" class="h-5 w-5 text-indigo-300"></i>
+              <span>Travellingo</span>
+            </a>
 
-            <form class="mt-7 flex flex-col sm:flex-row items-center justify-center gap-3 max-w-2xl mx-auto">
-              <input
-                type="email"
-                required
-                placeholder="Enter your email"
-                class="w-full sm:flex-1 rounded-xl bg-white/95 px-5 py-3.5 text-slate-900 placeholder-slate-500 shadow-soft focus:outline-none focus:ring-2 focus:ring-indigo-500/60"
-              />
-              <button
-                type="submit"
-                class="w-full sm:w-auto rounded-xl bg-indigo-500 px-6 py-3.5 font-semibold text-white shadow-glow hover:brightness-110 transition"
-              >
-                Join Early Access
-              </button>
-            </form>
+            <!-- Center -->
+            <nav class="flex flex-wrap justify-center items-center gap-x-8 gap-y-2 text-sm text-white/75">
+              <a class="hover:text-white transition-colors" href="#features">Features</a>
+              <a class="hover:text-white transition-colors" href="#how-it-works">How it works</a>
+              <a class="hover:text-white transition-colors" href="#destinations">Destinations</a>
+              <a class="hover:text-white transition-colors" href="#pricing">Pricing</a>
+              <a class="hover:text-white transition-colors" href="#about">About us</a>
+            </nav>
 
-            <div class="mt-3 text-xs text-white/70">No spam. Just early access.</div>
-          </div>
-        </div>
-
-        <!-- Footer bar over the same background (matches screenshot) -->
-        <footer class="absolute bottom-0 left-0 right-0 bg-black/55 backdrop-blur-xl border-t border-white/10">
-          <div class="mx-auto max-w-7xl px-5 sm:px-6">
-            <div class="h-16 sm:h-20 flex flex-col sm:flex-row items-center justify-between gap-4">
-              <!-- Left -->
-              <a href="#top" class="flex items-center gap-2 font-display font-bold tracking-tight text-lg text-white">
-                <i data-lucide="map-pin" class="h-5 w-5 text-indigo-300"></i>
-                <span>Travellingo</span>
+            <!-- Right -->
+            <div class="flex items-center gap-3 text-white/80">
+              <a class="h-9 w-9 inline-flex items-center justify-center rounded-full bg-white/10 ring-1 ring-white/15 backdrop-blur hover:bg-white/15 hover:text-white transition-colors"
+                href="#" aria-label="Instagram">
+                <i class="fa-brands fa-instagram text-[18px]"></i>
               </a>
-
-              <!-- Center -->
-              <nav class="flex flex-wrap justify-center items-center gap-x-8 gap-y-2 text-sm text-white/75">
-                <a class="hover:text-white transition-colors" href="#features">Features</a>
-                <a class="hover:text-white transition-colors" href="#how-it-works">How it works</a>
-                <a class="hover:text-white transition-colors" href="#destinations">Destinations</a>
-                <a class="hover:text-white transition-colors" href="#pricing">Pricing</a>
-                <a class="hover:text-white transition-colors" href="#about">About us</a>
-              </nav>
-
-              <!-- Right -->
-              <div class="flex items-center gap-3 text-white/80">
-                <a
-                  class="h-9 w-9 inline-flex items-center justify-center rounded-full bg-white/10 ring-1 ring-white/15 backdrop-blur hover:bg-white/15 hover:text-white transition-colors"
-                  href="#"
-                  aria-label="Instagram"
-                >
-                  <i class="fa-brands fa-instagram text-[18px]"></i>
-                </a>
-                <a
-                  class="h-9 w-9 inline-flex items-center justify-center rounded-full bg-white/10 ring-1 ring-white/15 backdrop-blur hover:bg-white/15 hover:text-white transition-colors"
-                  href="#"
-                  aria-label="Facebook"
-                >
-                  <i class="fa-brands fa-facebook-f text-[18px]"></i>
-                </a>
-                <a
-                  class="h-9 w-9 inline-flex items-center justify-center rounded-full bg-white/10 ring-1 ring-white/15 backdrop-blur hover:bg-white/15 hover:text-white transition-colors"
-                  href="#"
-                  aria-label="Twitter"
-                >
-                  <i class="fa-brands fa-x-twitter text-[18px]"></i>
-                </a>
-                <a
-                  class="h-9 w-9 inline-flex items-center justify-center rounded-full bg-white/10 ring-1 ring-white/15 backdrop-blur hover:bg-white/15 hover:text-white transition-colors"
-                  href="#"
-                  aria-label="Email"
-                >
-                  <i class="fa-regular fa-envelope text-[18px]"></i>
-                </a>
-              </div>
+              <a class="h-9 w-9 inline-flex items-center justify-center rounded-full bg-white/10 ring-1 ring-white/15 backdrop-blur hover:bg-white/15 hover:text-white transition-colors"
+                href="#" aria-label="Facebook">
+                <i class="fa-brands fa-facebook-f text-[18px]"></i>
+              </a>
+              <a class="h-9 w-9 inline-flex items-center justify-center rounded-full bg-white/10 ring-1 ring-white/15 backdrop-blur hover:bg-white/15 hover:text-white transition-colors"
+                href="#" aria-label="Twitter">
+                <i class="fa-brands fa-x-twitter text-[18px]"></i>
+              </a>
+              <a class="h-9 w-9 inline-flex items-center justify-center rounded-full bg-white/10 ring-1 ring-white/15 backdrop-blur hover:bg-white/15 hover:text-white transition-colors"
+                href="#" aria-label="Email">
+                <i class="fa-regular fa-envelope text-[18px]"></i>
+              </a>
             </div>
           </div>
-        </footer>
-      </section>
-    </main>
+        </div>
+      </footer>
+    </section>
+  </main>
 
-    <!-- ========================================
+  <!-- ========================================
          Minimal Vanilla JS (menu, sticky navbar, reveal, parallax)
     ========================================= -->
-    <script>
-      // Render Lucide icons
-      lucide.createIcons();
+  <script>
+    // Render Lucide icons
+    lucide.createIcons();
 
-      // Sticky navbar with backdrop blur on scroll
-      const navbarInner = document.getElementById("navbarInner");
-      const onScroll = () => {
-        const scrolled = window.scrollY > 10;
-        navbarInner.classList.toggle("bg-navy-950", scrolled);
-        navbarInner.classList.toggle("ring-1", scrolled);
-        navbarInner.classList.toggle("ring-white/10", scrolled);
-        navbarInner.classList.toggle("rounded-2xl", scrolled);
-        navbarInner.classList.toggle("mt-3", scrolled);
-        navbarInner.classList.toggle("h-16", scrolled);
-        navbarInner.classList.toggle("h-20", !scrolled);
-      };
-      window.addEventListener("scroll", onScroll, { passive: true });
-      onScroll();
+    // Sticky navbar with backdrop blur on scroll
+    const navbarInner = document.getElementById("navbarInner");
+    const onScroll = () => {
+      const scrolled = window.scrollY > 10;
+      navbarInner.classList.toggle("bg-navy-950", scrolled);
+      navbarInner.classList.toggle("ring-1", scrolled);
+      navbarInner.classList.toggle("ring-white/10", scrolled);
+      navbarInner.classList.toggle("rounded-2xl", scrolled);
+      navbarInner.classList.toggle("mt-3", scrolled);
+      navbarInner.classList.toggle("h-16", scrolled);
+      navbarInner.classList.toggle("h-20", !scrolled);
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
 
-      // Mobile menu toggle
-      const menuBtn = document.getElementById("menuBtn");
-      const mobileMenu = document.getElementById("mobileMenu");
-      const closeMenu = () => {
-        mobileMenu.classList.add("hidden");
-        menuBtn.setAttribute("aria-expanded", "false");
-      };
-      menuBtn.addEventListener("click", () => {
-        const isHidden = mobileMenu.classList.contains("hidden");
-        mobileMenu.classList.toggle("hidden", !isHidden);
-        menuBtn.setAttribute("aria-expanded", String(isHidden));
-      });
-      mobileMenu.querySelectorAll("a").forEach((a) => a.addEventListener("click", closeMenu));
+    // Mobile menu toggle
+    const menuBtn = document.getElementById("menuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+    const closeMenu = () => {
+      mobileMenu.classList.add("hidden");
+      menuBtn.setAttribute("aria-expanded", "false");
+    };
+    menuBtn.addEventListener("click", () => {
+      const isHidden = mobileMenu.classList.contains("hidden");
+      mobileMenu.classList.toggle("hidden", !isHidden);
+      menuBtn.setAttribute("aria-expanded", String(isHidden));
+    });
+    mobileMenu.querySelectorAll("a").forEach((a) => a.addEventListener("click", closeMenu));
 
-      // Scroll reveal animations
-      const revealEls = document.querySelectorAll("[data-reveal]");
-      const revealObserver = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("is-visible");
-              revealObserver.unobserve(entry.target);
-            }
-          });
-        },
-        { threshold: 0.15 }
-      );
-      revealEls.forEach((el) => revealObserver.observe(el));
-
-      // Subtle parallax for glow blobs
-      const blobA = document.getElementById("blobA");
-      const blobB = document.getElementById("blobB");
-      const blobC = document.getElementById("blobC");
-      window.addEventListener(
-        "mousemove",
-        (e) => {
-          const x = (e.clientX / window.innerWidth - 0.5) * 16;
-          const y = (e.clientY / window.innerHeight - 0.5) * 16;
-          if (blobA) blobA.style.transform = `translate(${x}px, ${y}px)`;
-          if (blobB) blobB.style.transform = `translate(${-x}px, ${y}px)`;
-          if (blobC) blobC.style.transform = `translate(${x * 0.6}px, ${-y * 0.6}px)`;
-        },
-        { passive: true }
-      );
-
-      // Prevent empty submit (demo only)
-      document.querySelectorAll("form").forEach((form) => {
-        form.addEventListener("submit", (e) => {
-          e.preventDefault();
-          const input = form.querySelector("input[type='email']");
-          if (input && !input.value) {
-            input.focus();
-            return;
+    // Scroll reveal animations
+    const revealEls = document.querySelectorAll("[data-reveal]");
+    const revealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            revealObserver.unobserve(entry.target);
           }
-          form.reset();
         });
+      },
+      { threshold: 0.15 }
+    );
+    revealEls.forEach((el) => revealObserver.observe(el));
+
+    // Subtle parallax for glow blobs
+    const blobA = document.getElementById("blobA");
+    const blobB = document.getElementById("blobB");
+    const blobC = document.getElementById("blobC");
+    window.addEventListener(
+      "mousemove",
+      (e) => {
+        const x = (e.clientX / window.innerWidth - 0.5) * 16;
+        const y = (e.clientY / window.innerHeight - 0.5) * 16;
+        if (blobA) blobA.style.transform = `translate(${x}px, ${y}px)`;
+        if (blobB) blobB.style.transform = `translate(${-x}px, ${y}px)`;
+        if (blobC) blobC.style.transform = `translate(${x * 0.6}px, ${-y * 0.6}px)`;
+      },
+      { passive: true }
+    );
+
+    // Prevent empty submit (demo only)
+    document.querySelectorAll("form").forEach((form) => {
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const input = form.querySelector("input[type='email']");
+        if (input && !input.value) {
+          input.focus();
+          return;
+        }
+        form.reset();
       });
-    </script>
-  </body>
+    });
+  </script>
+</body>
+
 </html>
