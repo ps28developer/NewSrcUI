@@ -87,7 +87,7 @@ const CTA = () => {
             a better way to travel.
           </p>
 
-          <form onSubmit={submitWithAPI} className="mt-7 flex flex-col sm:flex-row items-center justify-center gap-3 max-w-2xl mx-auto">
+          <form onSubmit={submitWithoutAPI} className="mt-7 flex flex-col sm:flex-row items-center justify-center gap-3 max-w-2xl mx-auto">
             <input 
               type="email" 
               required 
