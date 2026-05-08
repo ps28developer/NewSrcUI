@@ -11,7 +11,6 @@ const Destinations = () => {
         </div>
 
         <div className="mt-10 grid lg:grid-cols-12 gap-10 items-center" data-reveal>
-          {/* Left: vertical checklist */}
           <div className="lg:col-span-4 pl-3 sm:pl-4 lg:pl-6">
             <div className="relative pl-2">
               {/* connector line */}
@@ -65,10 +64,9 @@ const Destinations = () => {
             </div>
           </div>
 
-          {/* Right: map card with floating preview */}
           <div className="lg:col-span-8">
             <div className="relative rounded-[28px] bg-white border border-slate-200 shadow-[0_18px_70px_rgba(2,6,23,0.10)] overflow-hidden">
-              {/* map image */}
+              {/* map */}
               <img 
                 src="/src/assets/map_mockup.png"
                 onError={(e) => { e.target.onerror = null; e.target.src = 'https://images.unsplash.com/photo-1526481280695-3c687fd5432c?auto=format&fit=crop&w=2200&q=80'; }}
@@ -77,11 +75,10 @@ const Destinations = () => {
                 loading="lazy" 
               />
 
-              {/* overlays: route + pins */}
               <div className="absolute inset-0">
                 <div className="absolute inset-0 pointer-events-none bg-gradient-to-r from-white/25 via-transparent to-transparent"></div>
 
-                {/* route (simple dashed line) */}
+                {/* route */}
                 <svg className="absolute inset-0 h-full w-full" viewBox="0 0 1000 600" preserveAspectRatio="none">
                   <path 
                     d="M230,260 C330,220 390,330 470,310 C560,285 585,350 670,335" 
@@ -93,7 +90,7 @@ const Destinations = () => {
                   />
                 </svg>
 
-                {/* pins */}
+
                 <div className="absolute left-[22%] top-[44%]">
                   <div className="h-12 w-12 rounded-full bg-indigo-500 text-white flex items-center justify-center font-bold shadow-lg">
                     P
@@ -110,7 +107,7 @@ const Destinations = () => {
                   </div>
                 </div>
 
-                {/* floating preview card */}
+
                 <div className="absolute right-8 top-1/2 -translate-y-1/2 w-64 bg-white/90 backdrop-blur border border-slate-200 rounded-2xl shadow-[0_16px_50px_rgba(2,6,23,0.20)] overflow-hidden">
                   <div className="p-3">
                     <img

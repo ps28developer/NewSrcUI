@@ -35,13 +35,11 @@ const Hero = () => {
           alt="Scenic coastline" 
           loading="eager" 
         />
-        {/* Dark overlay like reference screenshot */}
         <div className="absolute inset-0 bg-gradient-to-r from-navy-950/95 via-navy-950/75 to-navy-950/45"></div>
         <div className="absolute inset-0 bg-gradient-to-b from-navy-950/55 via-navy-950/35 to-navy-950/65"></div>
         <div className="absolute inset-0 bg-[radial-gradient(900px_circle_at_70%_30%,rgba(99,102,241,0.12),transparent_55%)]"></div>
       </div>
 
-      {/* Soft glow */}
       <div className="absolute inset-0 -z-10 pointer-events-none">
         <div 
           ref={blobARef} 
@@ -55,7 +53,6 @@ const Hero = () => {
 
       <div className="mx-auto max-w-7xl px-5 sm:px-6">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left */}
           <div className="max-w-xl" data-reveal>
             <div className="inline-flex items-center gap-2 text-[11px] tracking-widest text-white/70">
               <span className="h-2 w-2 rounded-full bg-indigo-400"></span>
@@ -112,11 +109,9 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Right: two angled phones */}
           <div className="relative hidden lg:block" id="demo" data-reveal>
             <div className="absolute -inset-10 bg-indigo-500/20 blur-3xl rounded-[60px]"></div>
 
-            {/* Phone frame helper */}
             <div className="relative h-[540px]">
               <div className="absolute left-24 top-6 w-[280px] rotate-[-12deg] animate-floaty will-change-transform">
                 <div className="rounded-[44px] bg-white/10 ring-1 ring-white/15 backdrop-blur p-3 shadow-soft">
