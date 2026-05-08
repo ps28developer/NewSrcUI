@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Travellingo - AI Powered Travel Planner
 
 Travellingo is a modern, AI-powered travel planning landing page designed to help travelers plan less and explore more. It provides a seamless interface for creating itineraries, discovering local gems, and managing trips.
@@ -35,6 +34,7 @@ Travellingo is a modern, AI-powered travel planning landing page designed to hel
 ### Development
 
 Run the development server:
+
 ```bash
 npm run dev
 ```
@@ -42,6 +42,7 @@ npm run dev
 ### Build
 
 Create a production build:
+
 ```bash
 npm run build
 ```
@@ -49,6 +50,3 @@ npm run build
 ## License
 
 MIT
-=======
-Sample html website
->>>>>>> 87b7f9d09cdeff1c287023b3aae589f9db47fc8e
