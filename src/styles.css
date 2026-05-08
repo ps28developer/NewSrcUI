@@ -3,87 +3,67 @@
 @tailwind utilities;
 
 @layer base {
-  :root {
-    --bg-color: 255 255 255;
-    --surface-color: 243 244 246;
-    --primary: 99 102 241;
-    --secondary: 168 85 247;
-    --text-color: 17 24 39;
-    --text-muted: 107 114 128;
-    --border-color: 0 0 0;
-    --glass-bg: rgba(255, 255, 255, 0.7);
-  }
-
-  .dark {
-    --bg-color: 11 15 25;
-    --surface-color: 21 26 39;
-    --primary: 99 102 241;
-    --secondary: 168 85 247;
-    --text-color: 243 244 246;
-    --text-muted: 156 163 175;
-    --border-color: 255 255 255;
-    --glass-bg: rgba(21, 26, 39, 0.7);
-  }
-
+  html,
   body {
-    @apply bg-background text-text font-sans antialiased selection:bg-primary/30 transition-colors duration-300;
-  }
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-display tracking-tight text-text;
+    overflow-x: hidden;
+    @apply bg-navy-950 text-white antialiased selection:bg-indigo-500/30;
   }
 }
 
-@layer utilities {
-  .glass {
-    background-color: var(--glass-bg);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgb(var(--border-color) / 0.1);
-  }
-  .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary;
-  }
-  .bg-hero-gradient {
-    background: linear-gradient(to bottom, transparent 0%, rgb(var(--bg-color)) 100%);
-  }
-}
-
-@layer components {
-  /* Navbar color scheme: white on hero, dark on scroll */
-  #navbar.navbar-top .nav-link {
-    @apply text-white/75 hover:text-white;
-  }
-  #navbar.navbar-top .navbar-brand {
-    @apply text-white;
-  }
-
-  #navbar.navbar-scrolled .nav-link {
-    @apply text-muted hover:text-text;
-  }
-  #navbar.navbar-scrolled .navbar-brand {
-    @apply text-text;
-  }
-}
-
-/* Custom scrollbar */
+/* Custom modern scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
-}
-::-webkit-scrollbar-track {
-  background: rgb(var(--bg-color));
-}
-::-webkit-scrollbar-thumb {
-  background: rgb(var(--surface-color));
-  border-radius: 4px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: rgb(var(--text-muted));
+  width: 10px;
 }
 
-/* Hover lift effect */
-.hover-lift {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+::-webkit-scrollbar-track {
+  background: #070a12;
 }
-.hover-lift:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 25px -5px rgba(99, 102, 241, 0.2);
+
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.22);
+  border-radius: 999px;
+  border: 2px solid #070a12;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.35);
+}
+
+/* Scroll reveal mechanism */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 800ms ease, transform 800ms ease;
+}
+
+[data-reveal].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Navigation link underline animation */
+.nav-underline {
+  position: relative;
+}
+
+.nav-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 100%;
+  height: 2px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 240ms ease;
+  background: linear-gradient(90deg, #6366f1, #a855f7);
+}
+
+.nav-underline:hover::after {
+  transform: scaleX(1);
+}
+
+/* Navbar background transition on scroll */
+#navbar.navbar-scrolled #navbarInner {
+  @apply bg-navy-950/80 backdrop-blur-xl border-b border-white/5;
 }
