@@ -1,5 +1,7 @@
 import React from 'react';
 import { Ship, Star } from 'lucide-react';
+import veniceFallback from '../assets/images/venice-fallback.jpg';
+import veniceMain from '../assets/images/venice-main.jpg';
 
 const Destinations = () => {
   return (
@@ -69,7 +71,7 @@ const Destinations = () => {
               {/* map */}
               <img 
                 src="/src/assets/map_mockup.png"
-                onError={(e) => { e.target.onerror = null; e.target.src = 'https://images.unsplash.com/photo-1526481280695-3c687fd5432c?auto=format&fit=crop&w=2200&q=80'; }}
+                onError={(e) => { e.target.onerror = null; e.target.src = veniceFallback; }}
                 alt="Venice map mock" 
                 className="h-[320px] sm:h-[380px] w-full object-cover" 
                 loading="lazy" 
@@ -111,7 +113,7 @@ const Destinations = () => {
                 <div className="absolute right-8 top-1/2 -translate-y-1/2 w-64 bg-white/90 backdrop-blur border border-slate-200 rounded-2xl shadow-[0_16px_50px_rgba(2,6,23,0.20)] overflow-hidden">
                   <div className="p-3">
                     <img
-                      src="https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?auto=format&fit=crop&w=1200&q=80"
+                      src={veniceMain}
                       alt="Evening in Venice" 
                       className="h-28 w-full rounded-xl object-cover" 
                       loading="lazy" 

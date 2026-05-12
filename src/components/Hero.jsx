@@ -1,5 +1,8 @@
 import React, { useEffect, useRef } from 'react';
 import { ArrowRight, PlayCircle } from 'lucide-react';
+import heroBg from '../assets/images/hero-bg.jpg';
+import heroCard1 from '../assets/images/hero-card-1.jpg';
+import heroCard2 from '../assets/images/hero-card-2.jpg';
 
 const Hero = () => {
   const blobARef = useRef(null);
@@ -31,7 +34,7 @@ const Hero = () => {
       <div className="absolute inset-0 -z-10">
         <img 
           className="h-full w-full object-cover"
-          src="https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=2400&q=80"
+          src={heroBg}
           alt="Scenic coastline" 
           loading="eager" 
         />
@@ -118,7 +121,7 @@ const Hero = () => {
                   <div className="relative rounded-[36px] overflow-hidden bg-white">
                     <div className="absolute top-3 left-1/2 -translate-x-1/2 h-6 w-28 rounded-full bg-black/80"></div>
                     <img
-                      src="https://images.unsplash.com/photo-1511739001486-6bfe10ce785f?auto=format&fit=crop&w=1200&q=80"
+                      src={heroCard1}
                       alt="App screen map" 
                       className="h-[520px] w-full object-cover" 
                       loading="lazy" 
@@ -132,7 +135,7 @@ const Hero = () => {
                   <div className="relative rounded-[36px] overflow-hidden bg-white">
                     <div className="absolute top-3 left-1/2 -translate-x-1/2 h-6 w-28 rounded-full bg-black/80"></div>
                     <img
-                      src="https://images.unsplash.com/photo-1483683804023-6ccdb62f86ef?auto=format&fit=crop&w=1200&q=80"
+                      src={heroCard2}
                       alt="App screen itinerary" 
                       className="h-[520px] w-full object-cover" 
                       loading="lazy" 

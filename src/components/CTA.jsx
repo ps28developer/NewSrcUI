@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { MapPin, Mail } from 'lucide-react';
 import { API_BASE_URL } from '../utils/constants';
+import ctaBg from '../assets/images/cta-bg.jpg';
 
 const CTA = () => {
   const [email, setEmail] = useState('');
@@ -60,7 +61,7 @@ const CTA = () => {
       <div className="absolute inset-0 -z-10">
         <img
           className="h-full w-full object-cover opacity-65"
-          src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=2400&q=80"
+          src={ctaBg}
           alt="CTA travel background"
           loading="lazy"
         />
