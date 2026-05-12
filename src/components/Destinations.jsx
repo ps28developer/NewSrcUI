@@ -2,6 +2,7 @@ import React from 'react';
 import { Ship, Star } from 'lucide-react';
 import veniceFallback from '../assets/images/venice-fallback.jpg';
 import veniceMain from '../assets/images/venice-main.jpg';
+import mapMockup from '../assets/map_mockup.png';
 
 const Destinations = () => {
   return (
@@ -70,7 +71,7 @@ const Destinations = () => {
             <div className="relative rounded-[28px] bg-white border border-slate-200 shadow-[0_18px_70px_rgba(2,6,23,0.10)] overflow-hidden">
               {/* map */}
               <img 
-                src="/src/assets/map_mockup.png"
+                src={mapMockup}
                 onError={(e) => { e.target.onerror = null; e.target.src = veniceFallback; }}
                 alt="Venice map mock" 
                 className="h-[320px] sm:h-[380px] w-full object-cover" 
