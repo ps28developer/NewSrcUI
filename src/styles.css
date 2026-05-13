@@ -10,26 +10,24 @@
   }
 }
 
-/* Custom modern scrollbar */
-::-webkit-scrollbar {
+::webkit-scrollbar {
   width: 10px;
 }
 
-::-webkit-scrollbar-track {
+::webkit-scrollbar-track {
   background: #070a12;
 }
 
-::-webkit-scrollbar-thumb {
+::webkit-scrollbar-thumb {
   background: rgba(148, 163, 184, 0.22);
   border-radius: 999px;
   border: 2px solid #070a12;
 }
 
-::-webkit-scrollbar-thumb:hover {
+::webkit-scrollbar-thumb:hover {
   background: rgba(148, 163, 184, 0.35);
 }
 
-/* Scroll reveal mechanism */
 [data-reveal] {
   opacity: 0;
   transform: translateY(18px);
@@ -41,7 +39,6 @@
   transform: translateY(0);
 }
 
-/* Navigation link underline animation */
 .nav-underline {
   position: relative;
 }
@@ -63,7 +60,6 @@
   transform: scaleX(1);
 }
 
-/* Navbar background transition on scroll */
 #navbar.navbar-scrolled #navbarInner {
-  @apply bg-navy-950/80 backdrop-blur-xl border-b border-white/5;
+  @apply bg-navy-950/90 backdrop-blur-2xl shadow-2xl;
 }

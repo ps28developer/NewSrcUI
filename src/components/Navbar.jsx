@@ -16,9 +16,8 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { name: 'Features', href: 'features' },
-    { name: 'How it works', href: 'how-it-works' },
-    { name: 'Destinations', href: 'destinations' },
+    { name: 'How it works', href: 'problem' },
+    { name: 'See It in Action', href: 'destinations' },
     { name: 'About us', href: 'about' },
   ];
 
@@ -35,9 +34,9 @@ const Navbar = () => {
     <header id="navbar" className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${isScrolled ? 'navbar-scrolled' : ''}`}>
       <div 
         id="navbarInner"
-        className={`mx-auto max-w-7xl px-5 sm:px-6 flex items-center justify-between transition-all duration-300 ${
+        className={`mx-auto w-full px-5 sm:px-8 lg:px-12 flex items-center justify-between transition-all duration-300 ${
           isScrolled 
-            ? 'bg-navy-950 ring-1 ring-white/10 rounded-2xl mt-3 h-16 bg-navy-950/80 backdrop-blur-xl border-b border-white/5' 
+            ? 'bg-navy-950/80 backdrop-blur-2xl h-16 shadow-lg' 
             : 'h-20'
         }`}
       >
@@ -50,8 +49,8 @@ const Navbar = () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
           }}
         >
-          <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-white/10 ring-1 ring-white/10 backdrop-blur">
-            <Compass className="h-5 w-5 text-indigo-300" />
+          <span className="inline-flex items-center justify-center">
+            <Compass className="h-6 w-6 text-indigo-400" />
           </span>
           <span>Travellingo</span>
         </a>
@@ -95,7 +94,7 @@ const Navbar = () => {
 
       {/* Mobile menu panel */}
       <div id="mobileMenu" className={`md:hidden ${isMobileMenuOpen ? 'block' : 'hidden'}`}>
-        <div className="mx-auto max-w-7xl px-5 sm:px-6 pb-6 pt-2">
+        <div className="mx-auto w-full px-5 sm:px-8 lg:px-12 pb-6 pt-2">
           <div className="rounded-3xl bg-navy-950 shadow-2xl ring-1 ring-white/10 p-4">
             <div className="grid gap-2 text-sm text-white/80">
               {navLinks.map((link) => (

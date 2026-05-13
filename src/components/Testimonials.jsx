@@ -27,7 +27,7 @@ const Testimonials = () => {
 
   return (
     <section className="bg-white text-slate-900 pt-10 sm:pt-12 pb-16 sm:pb-20" id="about">
-      <div className="mx-auto max-w-7xl px-5 sm:px-6">
+      <div className="mx-auto w-full px-5 sm:px-8 lg:px-12">
         <div className="text-center" data-reveal>
           <div className="inline text-xs font-semibold tracking-widest text-indigo-600">
             EARLY FEEDBACK

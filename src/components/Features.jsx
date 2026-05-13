@@ -37,10 +37,10 @@ const Features = () => {
 
   return (
     <section id="features" className="bg-white text-slate-900 pt-8 sm:pt-10 pb-6 sm:pb-8">
-      <div className="mx-auto max-w-7xl px-5 sm:px-6">
+      <div className="mx-auto w-full px-5 sm:px-8 lg:px-12">
         <div className="text-center" data-reveal>
-          <div className="text-xs font-semibold tracking-widest text-indigo-600">THE SOLUTION</div>
-          <h2 className="mt-3 font-display font-bold text-3xl sm:text-4xl">Everything for your trip, in one place.</h2>
+          <div className="text-sm font-semibold tracking-widest text-indigo-600">THE SOLUTION</div>
+          <h2 className="mt-3 font-display font-bold text-4xl sm:text-5xl">Everything for your trip, in one place.</h2>
         </div>
 
         <div className="mt-8 grid gap-4 md:grid-cols-5" data-reveal>
@@ -52,8 +52,8 @@ const Features = () => {
               <div className={`mx-auto h-12 w-12 rounded-full ${feature.color} flex items-center justify-center`}>
                 {feature.icon}
               </div>
-              <div className="mt-4 font-semibold text-sm">{feature.title}</div>
-              <div className="mt-2 text-xs text-slate-600">{feature.desc}</div>
+              <div className="mt-4 font-semibold text-base">{feature.title}</div>
+              <div className="mt-2 text-sm text-slate-600">{feature.desc}</div>
             </div>
           ))}
         </div>
