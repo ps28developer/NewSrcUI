@@ -54,20 +54,20 @@ const Hero = () => {
         ></div>
       </div>
 
-      <div className="mx-auto w-full px-5 sm:px-8 lg:px-12">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <div className="mx-auto max-w-7xl w-full px-5 sm:px-8 lg:px-12">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div data-reveal>
             <div className="inline-flex items-center gap-2 text-[11px] xl:text-[13px] tracking-widest text-white/70 uppercase">
               <span className="h-2 w-2 rounded-full bg-indigo-400"></span>
               <span className="font-semibold">AI POWERED TRAVEL PLANNER</span>
             </div>
 
-            <h1 className="mt-5 font-display font-extrabold tracking-tight text-5xl sm:text-6xl xl:text-7xl 2xl:text-8xl leading-[1.02]">
+            <h1 className="mt-5 font-display font-extrabold tracking-tight text-5xl sm:text-6xl leading-[1.05]">
               <span className="text-white">Plan Less.</span><br />
               <span className="bg-gradient-to-r from-indigo-300 to-violet-300 bg-clip-text text-transparent">Explore More.</span>
             </h1>
 
-            <p className="mt-5 text-white/75 text-lg xl:text-xl 2xl:text-2xl leading-relaxed max-w-xl">
+            <p className="mt-5 text-white/75 text-lg leading-relaxed max-w-xl">
               Travellingo is your AI travel companion that creates perfect trips, local experiences and stress-free
               journeys from start to finish.
             </p>
@@ -81,14 +81,6 @@ const Hero = () => {
                 Start Planning
                 <ArrowRight className="h-4 w-4" />
               </a>
-              {/* <a 
-                href="#demo"
-                onClick={(e) => handleScrollTo(e, 'demo')}
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-white/10 px-7 py-3.5 font-semibold ring-1 ring-white/15 backdrop-blur hover:bg-white/15 transition"
-              >
-                <PlayCircle className="h-5 w-5" />
-                Watch Demo
-              </a> */}
             </div>
 
             <div className="mt-7 flex items-center gap-4">
@@ -115,29 +107,31 @@ const Hero = () => {
           <div className="relative hidden lg:block" id="demo" data-reveal>
             <div className="absolute -inset-10 bg-indigo-500/20 blur-3xl rounded-[60px]"></div>
 
-            <div className="relative h-[540px] xl:h-[640px] 2xl:h-[740px] max-w-[600px] mx-auto">
-              <div className="absolute left-0 top-24 w-[280px] xl:w-[340px] 2xl:w-[400px] rotate-[-12deg] animate-floaty will-change-transform z-10">
+            <div className="relative h-[580px] xl:h-[620px] 2xl:h-[660px] max-w-[600px] mx-auto lg:mx-0">
+              {/* Phone 1 */}
+              <div className="absolute left-0 xl:left-[-20px] 2xl:left-[-40px] top-16 w-[300px] xl:w-[320px] 2xl:w-[340px] rotate-[-12deg] animate-floaty will-change-transform z-10">
                 <div className="rounded-[44px] bg-white/10 ring-1 ring-white/15 backdrop-blur p-3 shadow-soft">
                   <div className="relative rounded-[36px] overflow-hidden bg-white">
                     <div className="absolute top-3 left-1/2 -translate-x-1/2 h-6 w-28 rounded-full bg-black/80"></div>
                     <img
                       src={heroCard1}
                       alt="map view" 
-                      className="h-[520px] xl:h-[620px] 2xl:h-[720px] w-full object-cover" 
+                      className="h-[560px] xl:h-[600px] 2xl:h-[640px] w-full object-cover" 
                       loading="lazy" 
                     />
                   </div>
                 </div>
               </div>
 
-              <div className="absolute left-[160px] xl:left-[200px] 2xl:left-[240px] bottom-[-40px] w-[280px] xl:w-[340px] 2xl:w-[400px] rotate-[10deg] animate-floaty will-change-transform [animation-delay:1200ms] z-20">
+              {/* Phone 2 */}
+              <div className="absolute left-[170px] xl:left-[190px] 2xl:left-[210px] bottom-[-20px] w-[300px] xl:w-[320px] 2xl:w-[340px] rotate-[10deg] animate-floaty will-change-transform [animation-delay:1200ms] z-20">
                 <div className="rounded-[44px] bg-white/10 ring-1 ring-white/15 backdrop-blur p-3 shadow-soft">
                   <div className="relative rounded-[36px] overflow-hidden bg-white">
                     <div className="absolute top-3 left-1/2 -translate-x-1/2 h-6 w-28 rounded-full bg-black/80"></div>
                     <img
                       src={heroCard2}
                       alt="itinerary" 
-                      className="h-[520px] xl:h-[620px] 2xl:h-[720px] w-full object-cover" 
+                      className="h-[560px] xl:h-[600px] 2xl:h-[640px] w-full object-cover" 
                       loading="lazy" 
                     />
                   </div>
