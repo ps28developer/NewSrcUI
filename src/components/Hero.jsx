@@ -30,7 +30,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-[90vh] lg:min-h-screen pt-24 pb-32 sm:pb-48 overflow-hidden">
+    <section className="relative pt-24 pb-20 sm:pb-24 overflow-hidden">
       <div className="absolute inset-0 -z-10">
         <img 
           className="h-full w-full object-cover"

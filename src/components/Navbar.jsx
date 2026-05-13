@@ -34,7 +34,7 @@ const Navbar = () => {
     <header id="navbar" className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${isScrolled ? 'navbar-scrolled' : ''}`}>
       <div 
         id="navbarInner"
-        className={`mx-auto w-full px-5 sm:px-8 lg:px-12 flex items-center justify-between transition-all duration-300 ${
+        className={`mx-auto max-w-7xl w-full px-5 sm:px-8 lg:px-12 flex items-center justify-between transition-all duration-300 ${
           isScrolled 
             ? 'bg-navy-950/80 backdrop-blur-2xl h-16 shadow-lg' 
             : 'h-20'
