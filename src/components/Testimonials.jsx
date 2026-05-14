@@ -27,12 +27,12 @@ const Testimonials = () => {
 
   return (
     <section className="bg-white text-slate-900 pt-10 sm:pt-12 pb-16 sm:pb-20" id="about">
-      <div className="mx-auto w-full px-5 sm:px-8 lg:px-12">
+      <div className="mx-auto max-w-7xl w-full px-5 sm:px-8 lg:px-12">
         <div className="text-center" data-reveal>
           <div className="inline text-xs font-semibold tracking-widest text-indigo-600">
             EARLY FEEDBACK
           </div>
-          <h2 className="font-display font-bold text-3xl sm:text-4xl">A smarter way to plan every trip</h2>
+          <h2 className="mt-3 font-display font-bold text-4xl sm:text-5xl mx-auto">A smarter way to plan every trip</h2>
         </div>
 
         <div className="mt-10 grid gap-5 md:grid-cols-3" data-reveal>

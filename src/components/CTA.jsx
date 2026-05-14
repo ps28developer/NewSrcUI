@@ -69,9 +69,9 @@ const CTA = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-navy-950/20 via-navy-950/25 to-navy-950/60"></div>
       </div>
 
-      <div className="mx-auto w-full px-5 sm:px-8 lg:px-12">
+      <div className="mx-auto max-w-7xl w-full px-5 sm:px-8 lg:px-12">
         <div className="mx-auto max-w-4xl text-center" data-reveal>
-          <h2 className="font-display font-extrabold tracking-tight text-3xl sm:text-5xl text-white">Skip the planning. Get on the plane.</h2>
+          <h2 className="font-display font-extrabold tracking-tight text-3xl sm:text-4xl text-white mx-auto max-w-3xl">Skip the planning. Get on the plane.</h2>
           <p className="mt-3 text-white/80 text-base sm:text-lg">
             Join early access and be the first to experience<br className="hidden sm:block" />
             a better way to travel.
@@ -108,7 +108,7 @@ const CTA = () => {
 
       {/* page footer */}
       <footer className="absolute bottom-0 left-0 right-0 bg-black/55 backdrop-blur-xl border-t border-white/10">
-        <div className="mx-auto w-full px-5 sm:px-8 lg:px-12">
+        <div className="mx-auto max-w-7xl w-full px-5 sm:px-8 lg:px-12">
           <div className="h-16 sm:h-20 flex flex-col sm:flex-row items-center justify-between gap-4">
             <a
               href="#top"
@@ -120,8 +120,9 @@ const CTA = () => {
             </a>
 
             <nav className="flex flex-wrap justify-center items-center gap-x-8 gap-y-2 text-sm text-white/75">
-              <a className="hover:text-white transition-colors" href="#problem" onClick={(e) => scrollTo(e, 'problem')}>How it works</a>
-              <a className="hover:text-white transition-colors" href="#destinations" onClick={(e) => scrollTo(e, 'destinations')}>See It in Action</a>
+              <a className="hover:text-white transition-colors" href="#features" onClick={(e) => scrollTo(e, 'features')}>Features</a>
+              <a className="hover:text-white transition-colors" href="#how-it-works" onClick={(e) => scrollTo(e, 'how-it-works')}>How it works</a>
+              <a className="hover:text-white transition-colors" href="#destinations" onClick={(e) => scrollTo(e, 'destinations')}>Destinations</a>
               <a className="hover:text-white transition-colors" href="#about" onClick={(e) => scrollTo(e, 'about')}>About us</a>
             </nav>
 

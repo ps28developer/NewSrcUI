@@ -1,11 +1,10 @@
 import React from 'react';
 import veniceFallback from '../assets/images/venice-fallback.jpg';
-import veniceMain from '../assets/images/venice-main.jpg';
 import mapImage from '../assets/map.jpg';
 
 const Destinations = () => {
   return (
-    <section id="destinations" className="bg-white text-slate-900 pt-16 sm:pt-20 pb-12 sm:pb-16">
+    <section id="see-it-in-action" className="bg-white text-slate-900 pt-16 sm:pt-20 pb-12 sm:pb-16">
       <div className="mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-12">
         <div className="text-center" data-reveal>
           <div className="text-sm font-semibold tracking-widest text-indigo-600">SEE IT IN ACTION</div>
