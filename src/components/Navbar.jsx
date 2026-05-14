@@ -36,8 +36,7 @@ const Navbar = () => {
         id="navbarInner"
         className={`mx-auto max-w-7xl w-full px-5 sm:px-8 lg:px-12 flex items-center justify-between transition-all duration-300 ${
           isScrolled 
-            ? 'bg-navy-950/80 backdrop-blur-2xl h-16 shadow-lg' 
-            : 'h-20'
+            ? 'bg-navy-950/80 backdrop-blur-2xl h-16 shadow-lg rounded-2xl'             : 'h-20'
         }`}
       >
         {/* Logo */}
