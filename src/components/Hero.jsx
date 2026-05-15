@@ -54,8 +54,8 @@ const Hero = () => {
         ></div>
       </div>
 
-      <div className="mx-auto max-w-7xl w-full px-5 sm:px-8 lg:px-12">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <div className="page-container">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center">
           <div data-reveal>
             <div className="inline-flex items-center gap-2 text-[11px] tracking-widest text-white/70">
               <span className="h-2 w-2 rounded-full bg-indigo-400"></span>

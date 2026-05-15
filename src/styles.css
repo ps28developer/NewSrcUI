@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  /* Shared layout: matches navbar width — max 1280px, 24px gutters, centered */
+  .page-container {
+    @apply mx-auto w-full max-w-[1280px] px-6;
+  }
+}
+
 @layer base {
   html,
   body {

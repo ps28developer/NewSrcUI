@@ -37,7 +37,7 @@ const Features = () => {
 
   return (
     <section id="how-it-works" className="bg-white text-slate-900 pt-8 sm:pt-10 pb-6 sm:pb-8">
-      <div className="mx-auto max-w-7xl w-full px-5 sm:px-8 lg:px-12">
+      <div className="page-container">
         <div className="text-center" data-reveal>
           <div className="text-xs font-semibold tracking-widest text-indigo-600">THE SOLUTION</div>
           <h2 className="mt-3 font-display font-bold text-4xl sm:text-5xl mx-auto">Everything for your trip, in one place.</h2>
@@ -47,7 +47,7 @@ const Features = () => {
           {features.map((feature, idx) => (
             <div
               key={idx}
-              className="rounded-3xl bg-white shadow-[0_10px_40px_rgba(2,6,23,0.08)] ring-1 ring-slate-200 p-6 text-center hover:-translate-y-1 transition"
+              className="rounded-[2rem] bg-white shadow-[0_10px_40px_rgba(2,6,23,0.08)] ring-1 ring-slate-200 p-6 text-center hover:-translate-y-1 transition"
             >
               <div className={`mx-auto h-12 w-12 rounded-full ${feature.color} flex items-center justify-center`}>
                 {feature.icon}

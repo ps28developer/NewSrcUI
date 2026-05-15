@@ -32,17 +32,15 @@ const Navbar = () => {
 
   return (
     <header id="navbar" className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${isScrolled ? 'navbar-scrolled' : ''}`}>
-      <div 
+      <div
         id="navbarInner"
-        className={`mx-auto max-w-7xl w-full px-5 sm:px-8 lg:px-12 flex items-center justify-between transition-all duration-300 ${
-          isScrolled 
-            ? 'bg-navy-950/90 backdrop-blur-xl h-16 shadow-lg' 
-            : 'h-20'
+        style={{borderRadius: "1rem"}}
+        className={`page-container flex items-center justify-between overflow-hidden transition-all duration-300 ${
+          isScrolled ? 'h-16' : 'h-20'
         }`}
       >
-        {/* Logo */}
-        <a 
-          href="/" 
+        <a
+          href="/"
           className="flex items-center gap-3 font-display font-bold tracking-tight text-xl"
           onClick={(e) => {
             e.preventDefault();
@@ -53,12 +51,11 @@ const Navbar = () => {
           <span>Travellingo</span>
         </a>
 
-        {/* Desktop menu */}
         <nav className="hidden md:flex items-center gap-8 text-sm text-white/75">
           {navLinks.map((link) => (
-            <a 
-              key={link.name} 
-              className="nav-underline hover:text-white transition-colors" 
+            <a
+              key={link.name}
+              className="nav-underline hover:text-white transition-colors"
               href={`#${link.href}`}
               onClick={(e) => handleScrollTo(e, link.href)}
             >
@@ -67,10 +64,9 @@ const Navbar = () => {
           ))}
         </nav>
 
-        {/* Right CTA */}
         <div className="hidden md:flex items-center gap-3">
-          <a 
-            href="#early-access" 
+          <a
+            href="#early-access"
             className="px-5 py-2.5 rounded-full bg-indigo-500 text-white font-semibold shadow-glow hover:brightness-110 hover:-translate-y-0.5 transition-all"
             onClick={(e) => handleScrollTo(e, 'early-access')}
           >
@@ -78,10 +74,9 @@ const Navbar = () => {
           </a>
         </div>
 
-        {/* Mobile hamburger */}
-        <button 
+        <button
           id="menuBtn"
-          className="md:hidden inline-flex items-center justify-center h-11 w-11 rounded-xl bg-white/10 ring-1 ring-white/10 backdrop-blur hover:bg-white/15 transition-colors"
+          className="md:hidden inline-flex items-center justify-center h-11 w-11 rounded-full bg-white/10 ring-1 ring-white/10 backdrop-blur hover:bg-white/15 transition-colors"
           aria-label="Open menu"
           aria-expanded={isMobileMenuOpen}
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -90,23 +85,22 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* Mobile menu panel */}
       <div id="mobileMenu" className={`md:hidden ${isMobileMenuOpen ? 'block' : 'hidden'}`}>
-        <div className="mx-auto max-w-7xl w-full px-5 sm:px-8 lg:px-12 pb-6 pt-2">
-          <div className="rounded-3xl bg-navy-950 shadow-2xl ring-1 ring-white/10 p-4">
+        <div className="page-container pb-6 pt-2">
+          <div className="rounded-[2rem] bg-navy-950 shadow-2xl ring-1 ring-white/10 p-4">
             <div className="grid gap-2 text-sm text-white/80">
               {navLinks.map((link) => (
-                <a 
-                  key={link.name} 
-                  className="rounded-2xl px-4 py-3 hover:bg-white/10 transition-colors" 
+                <a
+                  key={link.name}
+                  className="rounded-full px-4 py-3 hover:bg-white/10 transition-colors"
                   href={`#${link.href}`}
                   onClick={(e) => handleScrollTo(e, link.href)}
                 >
                   {link.name}
                 </a>
               ))}
-              <a 
-                className="mt-2 rounded-2xl px-4 py-3 bg-white text-navy-950 font-semibold text-center hover:opacity-90 transition-opacity"
+              <a
+                className="mt-2 rounded-full px-4 py-3.5 bg-white text-navy-950 font-semibold text-center hover:opacity-90 transition-opacity"
                 href="#early-access"
                 onClick={(e) => handleScrollTo(e, 'early-access')}
               >

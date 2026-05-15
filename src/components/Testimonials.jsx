@@ -27,7 +27,7 @@ const Testimonials = () => {
 
   return (
     <section className="bg-white text-slate-900 pt-10 sm:pt-12 pb-16 sm:pb-20" id="about">
-      <div className="mx-auto max-w-7xl w-full px-5 sm:px-8 lg:px-12">
+      <div className="page-container">
         <div className="text-center" data-reveal>
           <div className="inline text-xs font-semibold tracking-widest text-indigo-600">
             EARLY FEEDBACK
@@ -39,7 +39,7 @@ const Testimonials = () => {
           {testimonials.map((t, idx) => (
             <article
               key={idx}
-              className="rounded-3xl bg-white border border-slate-200 shadow-[0_14px_50px_rgba(2,6,23,.08)] p-7 hover:-translate-y-1 hover:shadow-[0_18px_70px_rgba(2,6,23,.12)] transition-all"
+              className="rounded-[2rem] bg-white border border-slate-200 shadow-[0_14px_50px_rgba(2,6,23,.08)] p-7 hover:-translate-y-1 hover:shadow-[0_18px_70px_rgba(2,6,23,.12)] transition-all"
             >
               <div className="flex items-start gap-4">
                 <img className="h-10 w-10 rounded-full" src={t.img} alt={`${t.name} avatar`} loading="lazy" />

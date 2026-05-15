@@ -69,7 +69,7 @@ const CTA = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-navy-950/20 via-navy-950/25 to-navy-950/60"></div>
       </div>
 
-      <div className="mx-auto max-w-7xl w-full px-5 sm:px-8 lg:px-12">
+      <div className="page-container">
         <div className="mx-auto max-w-4xl text-center" data-reveal>
           <h2 className="font-display font-extrabold tracking-tight text-3xl sm:text-4xl text-white mx-auto max-w-3xl">Skip the planning. Get on the plane.</h2>
           <p className="mt-3 text-white/80 text-base sm:text-lg">
@@ -84,12 +84,12 @@ const CTA = () => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Enter your email"
-              className="w-full sm:flex-1 rounded-xl bg-white/95 px-5 py-3.5 text-slate-900 placeholder-slate-500 shadow-soft focus:outline-none focus:ring-2 focus:ring-indigo-500/60"
+              className="w-full sm:flex-1 rounded-full bg-white/95 px-6 py-3.5 text-slate-900 placeholder-slate-500 shadow-soft focus:outline-none focus:ring-2 focus:ring-indigo-500/60"
               disabled={status === 'loading'}
             />
             <button
               type="submit"
-              className="w-full sm:w-auto rounded-xl bg-indigo-500 px-6 py-3.5 font-semibold text-white shadow-glow hover:brightness-110 transition disabled:opacity-50"
+              className="w-full sm:w-auto shrink-0 rounded-full bg-indigo-500 px-8 py-3.5 font-semibold text-white shadow-glow hover:brightness-110 transition disabled:opacity-50"
               disabled={status === 'loading'}
             >
               {status === 'loading' ? 'Joining...' : 'Join Early Access'}
@@ -108,7 +108,7 @@ const CTA = () => {
 
       {/* page footer */}
       <footer className="absolute bottom-0 left-0 right-0 bg-black/55 backdrop-blur-xl border-t border-white/10">
-        <div className="mx-auto max-w-7xl w-full px-5 sm:px-8 lg:px-12">
+        <div className="page-container">
           <div className="h-16 sm:h-20 flex flex-col sm:flex-row items-center justify-between gap-4">
             <a
               href="#top"
@@ -120,9 +120,9 @@ const CTA = () => {
             </a>
 
             <nav className="flex flex-wrap justify-center items-center gap-x-8 gap-y-2 text-sm text-white/75">
-              <a className="hover:text-white transition-colors" href="#features" onClick={(e) => scrollTo(e, 'features')}>Features</a>
+              <a className="hover:text-white transition-colors" href="#how-it-works" onClick={(e) => scrollTo(e, 'how-it-works')}>Features</a>
               <a className="hover:text-white transition-colors" href="#how-it-works" onClick={(e) => scrollTo(e, 'how-it-works')}>How it works</a>
-              <a className="hover:text-white transition-colors" href="#destinations" onClick={(e) => scrollTo(e, 'destinations')}>Destinations</a>
+              <a className="hover:text-white transition-colors" href="#see-it-in-action" onClick={(e) => scrollTo(e, 'see-it-in-action')}>Destinations</a>
               <a className="hover:text-white transition-colors" href="#about" onClick={(e) => scrollTo(e, 'about')}>About us</a>
             </nav>
 
