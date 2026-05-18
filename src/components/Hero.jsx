@@ -427,10 +427,10 @@ function ProgressBar({ percent, color }) {
 }
 
 
-function Phone({ image, alt, size, overlay, bottomBar, mapRoute, className }) {
+function Phone({ image, alt, size, overlay, bottomBar, mapRoute, className, imageClassName }) {
   const sizes = {
-    back: 'w-[208px] sm:w-[228px] md:w-[238px] h-[420px] sm:h-[460px] md:h-[480px]',
-    front: 'w-[232px] sm:w-[258px] md:w-[268px] h-[450px] sm:h-[500px] md:h-[520px]',
+    back: 'w-[160px] sm:w-[228px] md:w-[238px] h-[320px] sm:h-[460px] md:h-[480px]',
+    front: 'w-[180px] sm:w-[258px] md:w-[268px] h-[360px] sm:h-[500px] md:h-[520px]',
   };
 
   return (
@@ -442,7 +442,7 @@ function Phone({ image, alt, size, overlay, bottomBar, mapRoute, className }) {
         <div className="absolute -left-[2px] top-[34%] z-20 h-10 w-[3px] rounded-l bg-white/15" />
         <div className="absolute -right-[2px] top-[30%] z-20 h-12 w-[3px] rounded-r bg-white/15" />
         <div className="absolute left-1/2 top-3.5 z-30 h-[28px] w-[100px] -translate-x-1/2 rounded-full bg-black ring-1 ring-white/10" />
-        <img src={image} alt={alt} className="h-full w-full object-cover" loading="eager" />
+        <img src={image} alt={alt} className={`h-full w-full object-cover ${imageClassName || ''}`} loading="eager" />
         {/* Gloss reflection */}
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-white/25 via-transparent to-transparent opacity-50" />
         <div className="pointer-events-none absolute inset-x-0 top-0 h-1/3 bg-gradient-to-b from-white/10 to-transparent" />
@@ -500,7 +500,7 @@ function HeroShowcase({ reduce }) {
       <div className="pointer-events-none absolute left-1/2 top-[46%] h-[480px] w-[480px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-indigo-500/35 blur-[110px]" aria-hidden />
       <div className="pointer-events-none absolute left-1/2 top-[50%] h-[320px] w-[320px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-violet-500/20 blur-[80px]" aria-hidden />
 
-      <div className="relative mx-auto h-[min(540px,78vw)] w-full max-w-[720px] overflow-visible">
+      <div className="relative mx-auto h-[390px] xs:h-[440px] sm:h-[min(540px,78vw)] w-full max-w-[720px] overflow-visible">
         <ShowcaseTravelPaths reduce={reduce} />
 
         <div className="absolute left-1/2 top-0 h-full w-[min(300px,54vw)] -translate-x-1/2 sm:w-[320px] md:w-[350px]">
@@ -510,7 +510,7 @@ function HeroShowcase({ reduce }) {
           className="absolute left-[-14%] top-[10%] z-10"
           style={{ transformOrigin: 'center center' }}
           initial={reduce ? false : { opacity: 0, x: -16 }}
-          animate={{ opacity: 1, rotate: 0, x: 0 }}
+          animate={{ opacity: 1, rotate: -6, x: 0 }}
           transition={{ type: 'spring', stiffness: 100, damping: 18, delay: 0.15 }}
         >
           <motion.div {...floatY(7, 0.1, reduce)}>
@@ -518,13 +518,14 @@ function HeroShowcase({ reduce }) {
               size="back"
               image={heroCard1}
               alt="Paris destination"
+              imageClassName="object-bottom"
               overlay={
-                <div className="absolute inset-x-0 bottom-0 z-10 bg-gradient-to-t from-black/95 via-black/50 to-transparent px-4 pb-5 pt-24">
-                  <p className="text-[11px] text-white/70">Paris, France · 24°C</p>
-                  <p className="mt-1 font-display text-sm font-semibold text-white">
+                <div className="absolute inset-x-0 bottom-0 z-10 bg-gradient-to-t from-black/90 via-black/40 to-transparent px-2.5 pb-3.5 pt-8 sm:px-4 sm:pb-5 sm:pt-24">
+                  <p className="text-[9px] text-white/70 sm:text-[11px]">Paris, France · 24°C</p>
+                  <p className="mt-0.5 font-display text-xs font-semibold text-white sm:mt-1 sm:text-sm">
                     Your next adventure is calling.
                   </p>
-                  <div className="mt-3 h-[3px] w-[46%] overflow-hidden rounded-full bg-white/[0.06]" aria-hidden>
+                  <div className="mt-2 h-[2.5px] w-[46%] overflow-hidden rounded-full bg-white/[0.06] sm:mt-3 sm:h-[3px]" aria-hidden>
                     <motion.div
                       className="h-full rounded-full bg-gradient-to-r from-cyan-400 via-sky-400 to-emerald-400 shadow-[0_0_12px_rgba(52,211,153,0.65)]"
                       initial={{ width: 0 }}
@@ -579,7 +580,7 @@ function HeroShowcase({ reduce }) {
         </motion.div>
         </div>
         
-        <GlassCard className="absolute left-[-22%] top-[3%] z-30 w-[min(186px,40vw)] sm:w-[186px]" delay={0.3} reduce={reduce}>
+        <GlassCard className="absolute left-[-2%] top-[2%] z-30 w-[140px] xs:w-[155px] sm:left-[-22%] sm:w-[186px]" delay={0.3} reduce={reduce}>
           <div className="flex gap-2.5">
             <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-sky-500/20 text-sky-300 ring-1 ring-sky-400/25">
               <Plane className="h-3.5 w-3.5" />
@@ -593,7 +594,7 @@ function HeroShowcase({ reduce }) {
         </GlassCard>
 
         <GlassCard
-          className="absolute left-[-25%] top-[36%] z-30 w-[min(186px,40vw)] sm:w-[186px]"
+          className="absolute left-[-4%] top-[35%] z-30 w-[140px] xs:w-[155px] sm:left-[-25%] sm:w-[186px]"
           delay={0.36}
           floatDuration={6}
           floatDelay={0.15}
@@ -612,7 +613,7 @@ function HeroShowcase({ reduce }) {
         </GlassCard>
 
         <GlassCard
-          className="absolute bottom-[20%] left-[-23%] z-30 w-[min(186px,40vw)] sm:w-[186px]"
+          className="absolute bottom-[10%] left-[-3%] z-30 w-[140px] xs:w-[155px] sm:left-[-23%] sm:w-[186px]"
           delay={0.42}
           floatDuration={6.5}
           floatDelay={0.3}
@@ -630,7 +631,7 @@ function HeroShowcase({ reduce }) {
 </div>
         </GlassCard>
 
-        <GlassCard className="absolute right-0 top-[14%] z-30 w-[min(186px,40vw)] sm:w-[186px]" delay={0.48} reduce={reduce}>
+        <GlassCard className="absolute right-[2%] top-[16%] z-30 w-[140px] xs:w-[155px] sm:right-0 sm:w-[186px]" delay={0.48} reduce={reduce}>
           <div className="flex gap-2.5">
             <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-violet-500/20 text-violet-200 ring-1 ring-violet-400/25">
               <Users className="h-3.5 w-3.5" />
@@ -644,7 +645,7 @@ function HeroShowcase({ reduce }) {
         </GlassCard>
 
         <GlassCard
-          className="absolute bottom-[18%] right-0 z-30 w-[min(186px,40vw)] sm:w-[186px]"
+          className="absolute bottom-[10%] right-[2%] z-30 w-[140px] xs:w-[155px] sm:right-0 sm:w-[186px]"
           delay={0.54}
           floatDuration={5.8}
           floatDelay={0.45}
@@ -757,7 +758,7 @@ const Hero = () => {
 
             <motion.div variants={fadeUp(0.2)} className="relative mt-5 min-h-[108px] w-full pb-1 sm:min-h-[118px]">
               {/* Jagged City-Grid Map Route */}
-              <div className="absolute inset-0 z-0 pointer-events-none overflow-visible">
+              <div className="absolute inset-0 z-0 pointer-events-none overflow-visible hidden sm:block">
                 <svg className="absolute inset-0 h-full w-full overflow-visible" fill="none">
                   <motion.path
                     d="M 40 125 L 70 145 L 160 155 L 210 185 L 245 155 L 280 155 L 280 75"
@@ -838,11 +839,11 @@ const Hero = () => {
           transition={{ duration: 0.6, delay: 0.3, ease: easeOut }}
         >
           <div className="rounded-[2rem] border border-white/[0.08] bg-[rgba(6,10,24,0.6)] px-4 py-4 shadow-[0_24px_80px_rgba(0,0,0,0.5),inset_0_1px_0_rgba(255,255,255,0.06)] backdrop-blur-2xl sm:px-6 md:rounded-[2.25rem] md:px-8 md:py-5">
-            <div className="flex flex-col gap-6 sm:flex-row sm:flex-wrap sm:items-center sm:justify-between lg:flex-nowrap lg:gap-0">
+            <div className="grid grid-cols-2 gap-x-4 gap-y-5 sm:flex sm:flex-row sm:flex-wrap sm:items-center sm:justify-between lg:flex-nowrap lg:gap-0">
               {STATS.map(({ icon: Icon, value, label, accent }, i) => (
                 <React.Fragment key={label}>
                   <motion.div
-                    className="group flex min-w-[120px] flex-1 items-center gap-3.5 px-2 py-1 sm:px-4"
+                    className="group flex min-w-[120px] flex-1 items-center gap-3.5 px-2 py-1 sm:px-4 last:col-span-2 last:justify-center"
                     whileHover={reduce ? {} : { y: -2 }}
                   >
                     <div className={`flex h-10 w-10 shrink-0 items-center justify-center ${accent}`}>
