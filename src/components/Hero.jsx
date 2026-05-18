@@ -14,6 +14,7 @@ import {
   MapPinned,
   MapPin,
   Heart,
+  Play,
 } from 'lucide-react';
 import { motion, useReducedMotion } from 'framer-motion';
 import heroCard1 from '../assets/images/hero-card-1.jpg';
@@ -476,14 +477,8 @@ function MapRoute() {
           opacity="0.85"
         />
         {/* Plane icon on the path */}
-        <g transform="translate(144, 280) rotate(-45)">
-          <path
-            d="M-4,0 L4,0 M0,-4 L0,4" 
-            stroke="white"
-            strokeWidth="1"
-            opacity="0" 
-          />
-          <Plane className="h-4 w-4 -translate-x-2 -translate-y-2 fill-sky-400 text-white" />
+        <g transform="translate(144, 280) rotate(-23.5)">
+          <Plane width="20" height="20" x="-10" y="-10" className="fill-sky-400 text-white" strokeWidth={1.5} />
         </g>
         <circle cx="210" cy="120" r="10" fill="white" opacity="0.2" />
         <circle cx="210" cy="120" r="4" fill="white" />
@@ -590,8 +585,8 @@ function HeroShowcase({ reduce }) {
               <Plane className="h-3.5 w-3.5" />
             </div>
             <div className="min-w-0 flex-1">
-              <p className="text-xs font-semibold text-white">Airport in 48 min</p>
-              <p className="text-[10px] text-slate-400">Traffic is light</p>
+              <p className="text-xs font-semibold text-white">AI-Powered Planning</p>
+              <p className="text-[10px] text-slate-400">Smart itineraries in seconds</p>
               <ProgressBar percent={75} color="green" />
             </div>
 </div>
@@ -609,8 +604,8 @@ function HeroShowcase({ reduce }) {
               <MapPin className="h-3.5 w-3.5" />
             </div>
             <div>
-              <p className="text-xs font-semibold text-white">Sagrada Familia</p>
-              <p className="text-[10px] text-slate-400">12 min away</p>
+              <p className="text-xs font-semibold text-white">Live Trip Assistant</p>
+              <p className="text-[10px] text-slate-400">Real-time travel guidance</p>
               <ProgressBar percent={60} color="violet" />
             </div>
 </div>
@@ -628,8 +623,8 @@ function HeroShowcase({ reduce }) {
               <Coffee className="h-3.5 w-3.5" />
             </div>
             <div>
-              <p className="text-xs font-semibold text-white">Hidden local café</p>
-              <p className="text-[10px] text-amber-400/90">4.9 ★ Great reviews</p>
+              <p className="text-xs font-semibold text-white">87% Less Planning Time</p>
+              <p className="text-[10px] text-slate-400">Spend more time exploring</p>
               <ProgressBar percent={85} color="green" />
             </div>
 </div>
@@ -641,8 +636,8 @@ function HeroShowcase({ reduce }) {
               <Users className="h-3.5 w-3.5" />
             </div>
             <div>
-              <p className="text-xs font-semibold text-white">Low crowds now</p>
-              <p className="text-[10px] text-slate-400">Park Güell</p>
+              <p className="text-xs font-semibold text-white">Offline Maps</p>
+              <p className="text-[10px] text-slate-400">Works anywhere</p>
               <ProgressBar percent={45} color="violet" />
             </div>
 </div>
@@ -660,8 +655,8 @@ function HeroShowcase({ reduce }) {
               <Sunset className="h-3.5 w-3.5" />
             </div>
             <div>
-              <p className="text-xs font-semibold text-white">Sunset in 42 min</p>
-              <p className="text-[10px] text-slate-400">Best view nearby</p>
+              <p className="text-xs font-semibold text-white">Your Data</p>
+              <p className="text-[10px] text-slate-400">Private & Secure</p>
               <ProgressBar percent={55} color="orange" />
             </div>
 </div>
@@ -748,7 +743,7 @@ const Hero = () => {
                 Start Planning
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
               </motion.a>
-              {/* <motion.a
+              <motion.a
                 href="#see-it-in-action"
                 onClick={(e) => scrollTo(e, 'see-it-in-action')}
                 className="inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/[0.05] px-6 py-3 text-sm font-semibold text-white/85 backdrop-blur-md transition-colors hover:border-white/20 hover:bg-white/[0.08]"
@@ -757,7 +752,7 @@ const Hero = () => {
               >
                 <Play className="h-4 w-4 fill-white/80" />
                 Watch Demo
-              </motion.a> */}
+              </motion.a>
             </motion.div>
 
             <motion.div variants={fadeUp(0.2)} className="relative mt-5 min-h-[108px] w-full pb-1 sm:min-h-[118px]">
