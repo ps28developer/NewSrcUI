@@ -586,8 +586,8 @@ function HeroShowcase({ reduce }) {
               <Plane className="h-3.5 w-3.5" />
             </div>
             <div className="min-w-0 flex-1">
-              <p className="text-xs font-semibold text-white">AI-Powered Planning</p>
-              <p className="text-[10px] text-slate-400">Smart itineraries in seconds</p>
+              <p className="text-xs font-semibold text-white">Airport in 48 min</p>
+              <p className="text-[10px] text-slate-400">Traffic is light</p>
               <ProgressBar percent={75} color="green" />
             </div>
 </div>
@@ -605,8 +605,8 @@ function HeroShowcase({ reduce }) {
               <MapPin className="h-3.5 w-3.5" />
             </div>
             <div>
-              <p className="text-xs font-semibold text-white">Live Trip Assistant</p>
-              <p className="text-[10px] text-slate-400">Real-time travel guidance</p>
+              <p className="text-xs font-semibold text-white">Sagrada Familia</p>
+              <p className="text-[10px] text-slate-400">12 min away</p>
               <ProgressBar percent={60} color="violet" />
             </div>
 </div>
@@ -624,8 +624,8 @@ function HeroShowcase({ reduce }) {
               <Coffee className="h-3.5 w-3.5" />
             </div>
             <div>
-              <p className="text-xs font-semibold text-white">87% Less Planning Time</p>
-              <p className="text-[10px] text-slate-400">Spend more time exploring</p>
+              <p className="text-xs font-semibold text-white">Hidden local café</p>
+              <p className="text-[10px] text-amber-400/90">4.9 ★ Great reviews</p>
               <ProgressBar percent={85} color="green" />
             </div>
 </div>
@@ -637,8 +637,8 @@ function HeroShowcase({ reduce }) {
               <Users className="h-3.5 w-3.5" />
             </div>
             <div>
-              <p className="text-xs font-semibold text-white">Offline Maps</p>
-              <p className="text-[10px] text-slate-400">Works anywhere</p>
+              <p className="text-xs font-semibold text-white">Low crowds now</p>
+              <p className="text-[10px] text-slate-400">Park Güell</p>
               <ProgressBar percent={45} color="violet" />
             </div>
 </div>
@@ -656,8 +656,8 @@ function HeroShowcase({ reduce }) {
               <Sunset className="h-3.5 w-3.5" />
             </div>
             <div>
-              <p className="text-xs font-semibold text-white">Your Data</p>
-              <p className="text-[10px] text-slate-400">Private & Secure</p>
+              <p className="text-xs font-semibold text-white">Sunset in 42 min</p>
+              <p className="text-[10px] text-slate-400">Best view nearby</p>
               <ProgressBar percent={55} color="orange" />
             </div>
 </div>
@@ -668,10 +668,10 @@ function HeroShowcase({ reduce }) {
 }
 
 const STATS = [
-  { icon: Globe2, value: '34+', label: 'Countries', accent: 'text-violet-400' },
-  { icon: Wand2, value: '12K+', label: 'AI Itineraries Created', accent: 'text-indigo-400' },
-  { icon: Zap, value: '87%', label: 'Less Planning Time', accent: 'text-sky-400' },
-  { icon: Map, value: 'Offline Maps', label: 'Works Anywhere', accent: 'text-teal-400' },
+  { icon: Wand2, value: 'AI-Powered Planning', label: 'Smart itineraries in seconds', accent: 'text-violet-400' },
+  { icon: Globe2, value: 'Live Trip Assistant', label: 'Real-time travel guidance', accent: 'text-indigo-400' },
+  { icon: Zap, value: '87% Less Planning Time', label: 'Spend more time exploring', accent: 'text-sky-400' },
+  { icon: Map, value: 'Offline Maps', label: 'Works anywhere', accent: 'text-teal-400' },
   { icon: ShieldCheck, value: 'Your Data', label: 'Private & Secure', accent: 'text-green-500' },
 ];
 
@@ -838,12 +838,12 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3, ease: easeOut }}
         >
-          <div className="rounded-[2rem] border border-white/[0.08] bg-[rgba(6,10,24,0.6)] px-4 py-4 shadow-[0_24px_80px_rgba(0,0,0,0.5),inset_0_1px_0_rgba(255,255,255,0.06)] backdrop-blur-2xl sm:px-6 md:rounded-[2.25rem] md:px-8 md:py-5">
+          <div className="rounded-[2rem] border border-white/[0.08] bg-[rgba(6,10,24,0.6)] px-2 py-4 shadow-[0_24px_80px_rgba(0,0,0,0.5),inset_0_1px_0_rgba(255,255,255,0.06)] backdrop-blur-2xl sm:px-4 md:rounded-[2.25rem] md:px-5 md:py-5">
             <div className="grid grid-cols-2 gap-x-4 gap-y-5 sm:flex sm:flex-row sm:flex-wrap sm:items-center sm:justify-between lg:flex-nowrap lg:gap-0">
               {STATS.map(({ icon: Icon, value, label, accent }, i) => (
                 <React.Fragment key={label}>
                   <motion.div
-                    className="group flex min-w-[120px] flex-1 items-center gap-3.5 px-2 py-1 sm:px-4 last:col-span-2 last:justify-center"
+                    className="group flex min-w-[120px] flex-1 items-center gap-2.5 px-1 py-1 sm:px-2 md:px-2.5 last:col-span-2 last:justify-center"
                     whileHover={reduce ? {} : { y: -2 }}
                   >
                     <div className={`flex h-10 w-10 shrink-0 items-center justify-center ${accent}`}>
