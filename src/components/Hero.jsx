@@ -510,7 +510,7 @@ function HeroShowcase({ reduce }) {
           className="absolute left-[-14%] top-[10%] z-10"
           style={{ transformOrigin: 'center center' }}
           initial={reduce ? false : { opacity: 0, x: -16 }}
-          animate={{ opacity: 1, rotate: -6, x: 0 }}
+          animate={{ opacity: 1, rotate: 0, x: 0 }}
           transition={{ type: 'spring', stiffness: 100, damping: 18, delay: 0.15 }}
         >
           <motion.div {...floatY(7, 0.1, reduce)}>
@@ -838,12 +838,12 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3, ease: easeOut }}
         >
-          <div className="rounded-[2rem] border border-white/[0.08] bg-[rgba(6,10,24,0.6)] px-2 py-4 shadow-[0_24px_80px_rgba(0,0,0,0.5),inset_0_1px_0_rgba(255,255,255,0.06)] backdrop-blur-2xl sm:px-4 md:rounded-[2.25rem] md:px-5 md:py-5">
+          <div className="rounded-[2rem] border border-white/[0.08] bg-[rgba(6,10,24,0.6)] px-4 py-4 shadow-[0_24px_80px_rgba(0,0,0,0.5),inset_0_1px_0_rgba(255,255,255,0.06)] backdrop-blur-2xl sm:px-6 md:rounded-[2.25rem] md:px-8 md:py-5">
             <div className="grid grid-cols-2 gap-x-4 gap-y-5 sm:flex sm:flex-row sm:flex-wrap sm:items-center sm:justify-between lg:flex-nowrap lg:gap-0">
               {STATS.map(({ icon: Icon, value, label, accent }, i) => (
                 <React.Fragment key={label}>
                   <motion.div
-                    className="group flex min-w-[120px] flex-1 items-center gap-2.5 px-1 py-1 sm:px-2 md:px-2.5 last:col-span-2 last:justify-center"
+                    className="group flex min-w-[120px] flex-1 lg:flex-none lg:min-w-0 items-center gap-3.5 px-2 py-1 sm:px-4 lg:px-0 last:col-span-2 last:justify-center lg:last:col-span-1 lg:last:justify-start"
                     whileHover={reduce ? {} : { y: -2 }}
                   >
                     <div className={`flex h-10 w-10 shrink-0 items-center justify-center ${accent}`}>
